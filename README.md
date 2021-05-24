@@ -1,70 +1,192 @@
-# Getting Started with Create React App
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+![Contributors](https://img.shields.io/github/contributors/ZhihengChang/MyWentworth?style=for-the-badge)
+![Forks](https://img.shields.io/github/forks/ZhihengChang/MyWentworth?style=for-the-badge)
+![Stargazers](https://img.shields.io/github/stars/ZhihengChang/MyWentworth?style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/ZhihengChang/MyWentworth?style=for-the-badge)
+![MIT License](https://img.shields.io/github/license/ZhihengChang/MyWentworth?style=for-the-badge)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="#">
+    <img src="src/client/views/img/mywit_logo.png" alt="Logo" height=100>
+  </a>
 
-### `npm start`
+  <h3 align="center">myWit</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <p align="center">
+    A user-friendly, lightweight social networking web application for Wentworth students only.
+    <br />
+    <a href="https://drive.google.com/drive/u/0/folders/1VFKq6v29O0OJ81LiXl_hO8NHgq5-DfLk"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#">View Demo</a>
+    ·
+    <a href="https://github.com/ZhihengChang/iManager/issues/new">Report Bug</a>
+    ·
+    <a href="https://github.com/ZhihengChang/iManager/issues/new">Request Feature</a>
+  </p>
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![myWit Home Screen Shot](https://github.com/ZhihengChang/MyWentworth/blob/main/demo/homeui.PNG)
 
-### `npm run eject`
+As long as Wentworth students are staying off campus, there will always be an aspect of the college life missing. myWit is a userfriendly, light weight social networking web application for students only absolutely begin to bring some of that back. Social media has been very instrumental for people to communicate with each other while staying safe from their home. Through myWit, Wentworth students will meet new classmates and friends much easier and improve their social life. myWit also gives students an opportunity to share their thoughts with other students across the campus.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Features
+It weeds out current myWentworth functionalities and embed additional functionalities in terms of student’s life in campus which help create a more socialized and organized campus.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 1. Account
+myWit allows students to view their personal info, and academic info such as course schedule and networks.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![myWit Profile Screen Shot](https://github.com/ZhihengChang/MyWentworth/blob/main/demo/profile.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### 2. Moment
+myWit allows students to share their thoughts, ideas, and updates across the campus through creating "moments" (posts). Moment can not only used by students but also by School offices. School events/updates or department announcements can also be posted here with different color of highlight to enhance the visibility of students. Student can also  interact with moments. Interaction includes Like and Comment the moment.
 
-## Learn More
+![myWit Moment Screen Shot](https://github.com/ZhihengChang/MyWentworth/blob/main/demo/newMoment.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### 3. Friends (In development, to be relased later)
+myWit allows students to add friends through searching for WIT IDs, usernames, or the students' real names. Students can also send messages directly to their friends by starting a Chat. Additionally, students have the capability to view their friends’ student profile (exclude sensitive information) by just clicking their usernames.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+#### 4. Apps
+myWit allows students to access a dynamic collections which serves to help student in all kind of aspect further more. The collection contains necessary student resources or other third-party learning tools/applications/websites. In apps, these resources/applications are presented as a block. Students are able to add or remove different blocks depends on their academic needs or personal preferences.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![myWit Apps Screen Shot](https://github.com/ZhihengChang/MyWentworth/blob/main/demo/apps.png)
 
-### Analyzing the Bundle Size
+### Built With
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* [Node.js](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
+* [Pug](https://pugjs.org/api/getting-started.html)
+* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas2)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+<!-- GETTING STARTED -->
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Before use myWit, make sure all preequisites are satisfied, and follow below installation steps to install the platform.
 
-### Deployment
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+First, make sure you already have Node.js installed. 
+To check use:
+```sh
+   npm -v
+   ```
+If no version found, download it [here](https://nodejs.org/en/download/)
 
-### `npm run build` fails to minify
+#### Username & Password
+username: changz
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+password: 12345678
+
+
+### Installation
+
+Clone the repo
+   ```sh
+   https://github.com/ZhihengChang/MyWentworth.git
+   ```
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+1. Start the server
+   ```sh
+   npm start
+   ```
+2. Go to [mywit](http://localhost:3000)
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/ZhihengChang/iManager/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Zhiheng Chang, Yihao Li: Zhihengchang602@gmail.com
+
+Project Link: [https://github.com/ZhihengChang/MyWentworth](https://github.com/ZhihengChang/MyWentworth)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [Node.js](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
+* [Pug](https://pugjs.org/api/getting-started.html)
+* [MongoDB](https://www.mongodb.com/cloud/atlas2)
+* [Img Shields](https://shields.io)
+* [GitHub Pages](https://pages.github.com)
+* [Font Awesome](https://fontawesome.com)
