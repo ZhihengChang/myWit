@@ -6,10 +6,11 @@ const SidebarOption = (props) => (
     //     span.nav--icon
     //         i(class= `fa fa-${icon}` aria-hidden='true')
     //     span.nav--name= label
-
-    <a className={props.label.split(' ').join('')} href={props.api}>
-        <span className='nav--name'>{props.label}</span>
-    </a>
+    <li>
+        <a className={props.label.split(' ').join('')} href={props.api}>
+            <span className='nav--name'>{props.label}</span>
+        </a>
+    </li>
 )
 
 export default SidebarOption;
