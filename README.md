@@ -17,9 +17,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="#">
+<!--   <a href="#">
     <img src="src/client/views/img/mywit_logo.png" alt="Logo" height=100>
-  </a>
+  </a> -->
 
   <h3 align="center">myWit</h3>
 
@@ -31,9 +31,9 @@
     <br />
     <a href="#">View Demo</a>
     ·
-    <a href="https://github.com/ZhihengChang/iManager/issues/new">Report Bug</a>
+    <a href="https://github.com/ZhihengChang/myWit/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/ZhihengChang/iManager/issues/new">Request Feature</a>
+    <a href="https://github.com/ZhihengChang/myWit/issues/new">Request Feature</a>
   </p>
 </p>
 
