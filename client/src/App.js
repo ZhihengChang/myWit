@@ -1,12 +1,15 @@
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+
 
 import HomePage from './pages/home/homepage.component';
-import SidebarOption from './components/side-bar-option/side-bar-option.component';
 
 function App() {
   return (
     <div>
-      <HomePage />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+      </Switch>
     </div>
   );
 }

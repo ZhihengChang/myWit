@@ -10,32 +10,27 @@ class SideBar extends React.Component {
                 id: 1,
                 label: 'Home',
                 icon: 'home',
-                api: '/',
+                linkUrl: '',
             },{
                 id: 2,
                 label: 'Moment',
                 icon: 'plus',
-                api: '#',
+                linkUrl: 'moment',
             },{
                 id: 3,
                 label: 'Profile',
                 icon: 'user-circle',
-                api: '/me',
+                linkUrl: 'me',
             },{
                 id: 4,
                 label: 'Friends',
                 icon: 'users',
-                api: '/friends',
+                linkUrl: 'friends',
             },{
                 id: 5,
                 label: 'Apps',
                 icon: 'window-restore',
-                api: '/apps',
-            },{
-                id: 6,
-                label: 'Sign out',
-                icon: 'sign-out',
-                api: '#',
+                linkUrl: 'apps',
             }],
         }
     }
@@ -45,8 +40,8 @@ class SideBar extends React.Component {
             <div className='sidebar'>
                 <ul>
                     {
-                        this.state.options.map(({id, label, icon, api}) => (
-                            <SidebarOption key={id} icon={icon} label={label} api={api} />
+                        this.state.options.map(({id, ...optionProps}) => (
+                            <SidebarOption key={id} {...optionProps} />
                         ))
                     }
                 </ul>
