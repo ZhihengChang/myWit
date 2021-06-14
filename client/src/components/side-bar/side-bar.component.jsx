@@ -31,7 +31,14 @@ class SideBar extends React.Component {
                 label: 'Apps',
                 icon: 'window-restore',
                 linkUrl: 'apps',
-            }],
+            },
+            // {
+            //     id: 6,
+            //     label: 'About',
+            //     icon: 'info',
+            //     linkUrl: 'About',
+            // }
+        ],
         }
     }
 

@@ -1,0 +1,69 @@
+.btn {
+  display: inline-block;
+  background: white;
+  color: #333;
+  padding: 0.4rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  border-radius: 30px;
+}
+
+/* Forms */
+.form {
+  display: block;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: #888;
+}
+
+input {
+  margin: 1.2rem 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+/* textarea {
+  display: block;
+  width: 50%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+} */
+
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 0.4rem 1.2rem;
+  font-size: 1.4rem;
+  width: 50%;
+}
+
+button {
+  font: inherit;
+}
+
+input[type="submit"],
+table th,
+table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+table th {
+  background: var(--light-color);
+}

@@ -1,45 +1,46 @@
-.sidebar{
-    position: fixed;
-    width: 40px;
-    height: 360px;
-    background: black;
-    transition: 0.5s;
-    overflow: hidden;
-    z-index: 9;
-    border-top-right-radius: 32px;
-    border-bottom-right-radius: 32px;
+.sidebar {
+  position: fixed;
+  /* top: 30%; */
+  width: 70px;
+  height: 360px;
+  background: black;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 9;
+  border-top-right-radius: 32px;
+  border-bottom-right-radius: 32px;
 }
 
 .sidebar:hover,
-.sidebar.active{
-    width: 200px;
-    box-shadow: 0 0 0 99999px rgba(0, 0, 0, .5);
+.sidebar.active {
+  width: 200px;
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.5);
 }
 
-.sidebar ul{
-    position: absolute;
-    top: 30px;
-    left: 0;
-    width: 100%;
+.sidebar ul {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
 }
 
-.sidebar ul li{
-    position: relative;
-    width: 100%;
-    list-style: none;
+.sidebar ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
 }
 
-.sidebar ul li:hover{
-    background: rgb(255, 102, 0);
+.sidebar ul li:hover {
+  background: rgb(255, 102, 0);
 }
 
-.sidebar ul li div{
-    position: relative;
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
+.sidebar ul li div {
+  position: relative;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
 /* .sidebar ul li a .nav--icon{
@@ -56,12 +57,12 @@
     padding-top: 0.7em;
 } */
 
-.sidebar ul li div .nav--name{
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-    text-align: start;
-    white-space: nowrap;
+.sidebar ul li div .nav--name {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
 }

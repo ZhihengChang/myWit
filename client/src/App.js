@@ -1,15 +1,16 @@
-import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
 
-
-import HomePage from './pages/home/homepage.component';
+import HomePage from "./pages/home/homepage.component";
+import Search from "./components/user/Search";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Switch>
-        <Route exact path='/' component={HomePage} />
+        <Route exact path="/" component={HomePage} />
       </Switch>
+      <Search />
     </div>
   );
 }
