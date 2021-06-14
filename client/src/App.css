@@ -84,6 +84,7 @@ acronym {
   font-family: "Lato", sans-serif;
 }
 
+
 body {
   background-color: orange;
   min-height: 100vh;
@@ -99,3 +100,16 @@ body {
   align-items: center;
   text-align: center;
 }
+
+body{
+    background-color: orange;
+    min-height: 100vh;
+}
+
+.svg-icon{
+    height: 25px;
+    margin-bottom: -5px;
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+

@@ -1,4 +1,5 @@
 import React from 'react';
+import OPTIONS from './options.data';
 import SidebarOption from '../side-bar-option/side-bar-option.component';
 import './side-bar.styles.css';
 
@@ -11,6 +12,7 @@ class SideBar extends React.Component {
                 label: 'Home',
                 icon: 'home',
                 linkUrl: '',
+
             },{
                 id: 2,
                 label: 'Moment',
@@ -39,6 +41,8 @@ class SideBar extends React.Component {
             //     linkUrl: 'About',
             // }
         ],
+
+            }]
         }
     }
 
