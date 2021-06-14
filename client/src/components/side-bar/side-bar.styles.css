@@ -1,8 +1,8 @@
 .sidebar{
     position: fixed;
-    width: 40px;
+    width: 50px;
     height: 360px;
-    background: black;
+    background: white;
     transition: 0.5s;
     overflow: hidden;
     z-index: 9;
@@ -38,27 +38,18 @@
     width: 100%;
     display: flex;
     text-decoration: none;
-    color: white;
+    color: black;
     cursor: pointer;
 }
 
-/* .sidebar ul li a .nav--icon{
-    position: relative;
-    display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
+.svg-icon{
+    padding-top: 0.7em;
+    min-width: 40px;
+    height: 30px;
+    margin: 8.5px 5px -5px 5px;
 }
 
-.sidebar ul li div .nav--icon .fa{
-    font-size: 24px;
-    padding-top: 0.7em;
-} */
-
 .sidebar ul li div .nav--name{
-    position: relative;
-    display: block;
     padding: 0 10px;
     height: 60px;
     line-height: 60px;
