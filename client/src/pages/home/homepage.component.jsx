@@ -9,6 +9,7 @@ const HomePage = () => (
     <div className = 'homepage'> 
         <SideBar />
         <SearchBar />
+        
     </div>
 )
 

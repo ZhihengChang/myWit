@@ -1,7 +1,6 @@
-
 .sidebar {
   position: fixed;
-  /* top: 30%; */
+  top: 30%;
   margin-top: 25px;
   width: 55px;
   height: 360px;
@@ -36,7 +35,6 @@
   background: orange;
 }
 
-
 .sidebar ul li div {
   position: relative;
   width: 100%;
@@ -55,4 +53,3 @@
   text-align: start;
   white-space: nowrap;
 }
-
