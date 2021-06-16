@@ -2,27 +2,15 @@
 .sidebar {
   position: fixed;
   /* top: 30%; */
-  width: 70px;
+  margin-top: 25px;
+  width: 55px;
   height: 360px;
-  background: black;
+  background: white;
   transition: 0.5s;
   overflow: hidden;
   z-index: 9;
   border-top-right-radius: 32px;
   border-bottom-right-radius: 32px;
-}
-
-.sidebar{
-    position: fixed;
-    width: 50px;
-    height: 360px;
-    background: white;
-    transition: 0.5s;
-    overflow: hidden;
-    z-index: 9;
-    border-top-right-radius: 32px;
-    border-bottom-right-radius: 32px;
-
 }
 
 .sidebar:hover,
@@ -45,7 +33,7 @@
 }
 
 .sidebar ul li:hover {
-  background: rgb(255, 102, 0);
+  background: orange;
 }
 
 
@@ -54,26 +42,9 @@
   width: 100%;
   display: flex;
   text-decoration: none;
-  color: white;
+  color: black;
   cursor: pointer;
 }
-
-.sidebar ul li div{
-    position: relative;
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
-
-.svg-icon{
-    padding-top: 0.7em;
-    min-width: 40px;
-    height: 30px;
-    margin: 8.5px 5px -5px 5px;
-}
-
 
 .sidebar ul li div .nav--name {
   position: relative;
@@ -83,13 +54,5 @@
   line-height: 60px;
   text-align: start;
   white-space: nowrap;
-}
-
-.sidebar ul li div .nav--name{
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-    text-align: start;
-    white-space: nowrap;
 }
 

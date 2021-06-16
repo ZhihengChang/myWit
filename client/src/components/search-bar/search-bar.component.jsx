@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Icon from '../../assets/icon.index'
 import "./search-bar.styles.css";
 
 export class Search extends Component {
@@ -18,19 +19,21 @@ export class Search extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmit} className="form">
+        <form onSubmit={this.onSubmit} className="search">
           <input
+            className="search-input"
             type="text"
             name="text"
             placeholder="Search..."
             value={this.state.text}
             onChange={this.onChange}
           />
-          <input
+          <button
             type="submit"
-            value="Search"
-            className="btn btn-dark btn-block"
-          />
+            className="search-btn"
+          >
+          <Icon name="search" width={10} fill={"#ffffff"}/>
+          </button>
         </form>
       </div>
     );

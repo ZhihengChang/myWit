@@ -7,13 +7,7 @@ class SideBar extends React.Component {
     constructor() {
         super();
         this.state = {
-            options: [{
-                id: 1,
-                label: 'Home',
-                icon: 'home',
-                linkUrl: '',
-
-            }]
+            options: OPTIONS
         }
     }
 

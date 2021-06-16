@@ -8,7 +8,7 @@ const SidebarOption = ({label, icon, linkUrl, history, match}) => (
         className={label.split(' ').join('')}
         onClick={() => history.push(`${match.url}${linkUrl}`)} 
         >
-            <Icon name={icon} width={10}/>
+                <Icon name={icon.toLowerCase()} width={10} />
             <span className='nav--name'>{label}</span>
         </div>
     </li>
