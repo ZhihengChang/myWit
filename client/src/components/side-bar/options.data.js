@@ -4,24 +4,24 @@ const OPTIONS = [{
     icon: 'home',
     linkUrl: '',
 },{
-    id: 2,
-    label: 'Moment',
-    icon: 'plus',
-    linkUrl: 'moment',
-},{
     id: 3,
     label: 'Profile',
-    icon: 'user-circle',
+    icon: 'profile',
     linkUrl: 'me',
+},{
+    id: 2,
+    label: 'Moment',
+    icon: 'moment',
+    linkUrl: 'moment',
 },{
     id: 4,
     label: 'Friends',
-    icon: 'users',
+    icon: 'friends',
     linkUrl: 'friends',
 },{
     id: 5,
     label: 'Apps',
-    icon: 'window-restore',
+    icon: 'apps',
     linkUrl: 'apps',
 }];
 
