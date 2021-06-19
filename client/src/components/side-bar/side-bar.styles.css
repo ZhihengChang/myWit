@@ -32,6 +32,7 @@
 }
 
 .sidebar ul li div:hover {
+  color: black;
   background: rgba(255, 166, 0, 0.897);
 }
 
@@ -40,7 +41,7 @@
   width: 100%;
   display: flex;
   text-decoration: none;
-  color: black;
+  color: white;
   cursor: pointer;
   border-top-right-radius: 32px;
   border-bottom-right-radius: 32px;

@@ -1,0 +1,59 @@
+.background {
+    height: 100vh;
+    background-color: rgb(240, 240, 240);
+}
+
+.background > div {
+    width: 70%;
+    text-align: center;
+}
+
+.wentworth {
+    width: 50%;
+    height: 50%;
+    position: relative;
+    top: 100px;
+}
+
+.wentworth:hover {
+    transform: scale(1.1);
+    transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+
+.login {
+    width: 30%;
+    height: 100%;
+    min-width: 450px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 50px;
+    z-index: 1;
+    background-color: white;
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.102); 
+}
+
+.login-form-actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 0px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.action{
+    text-decoration: none;
+}
+
+.action:hover{
+    transition: 0.2s;
+    color: orange;
+}
+
+.login-form-submit{
+    margin-top: 50px;
+    text-align: right;
+}
