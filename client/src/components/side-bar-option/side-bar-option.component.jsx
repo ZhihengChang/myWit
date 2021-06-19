@@ -6,7 +6,12 @@ const SidebarOption = ({label, icon, linkUrl, history, match}) => (
     <li>
         <div
         className={label.split(' ').join('')}
-        onClick={() => history.push(`${match.url}${linkUrl}`)} 
+        onClick={async () => {
+            console.log(match.url);
+            // if(match.url !== '/') history.pop();
+            history.push(`${linkUrl}`);
+            }
+        } 
         >
                 <Icon name={icon.toLowerCase()} width={10} />
             <span className='nav--name'>{label}</span>
