@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UserItem from "./UserItem";
+import UserItem from "../user-block/user-block.component";
 import Spinner from "../../pages/Spinner";
 
 export class User extends Component {

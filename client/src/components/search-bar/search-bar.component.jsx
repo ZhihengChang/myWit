@@ -32,7 +32,7 @@ export class Search extends Component {
             type="submit"
             className="search-btn"
           >
-          <Icon name="search" width={10} fill={"#ffffff"}/>
+          <Icon name="search" width={10} fill={"#ccc"}/>
           </button>
         </form>
       </div>
