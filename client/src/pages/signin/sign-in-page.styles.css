@@ -1,0 +1,16 @@
+.base .background {
+    width: 70%;
+    text-align: center;
+}
+
+.wentworth {
+    width: 50%;
+    height: 50%;
+    position: relative;
+    top: 100px;
+}
+
+.wentworth:hover {
+    transform: scale(1.1);
+    transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}

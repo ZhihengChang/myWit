@@ -1,0 +1,24 @@
+.signup {
+    width: 33%;
+    height: 100%;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    z-index: 1;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    box-shadow: 12px 0 15px -4px rgba(0, 0, 0, 0.102), -12px 0 8px -4px rgba(0, 0, 0, 0.102);
+}
+
+.signup p {
+    color: orange;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.signup .signup-form .form-submit {
+    margin-top: 100px;
+    text-align: center;    
+}

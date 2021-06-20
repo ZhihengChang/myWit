@@ -29,34 +29,31 @@ class SignIn extends React.Component{
     render() {
         return(
             <div className='login'>
+                <p>Sign in</p>
                 <form className='login-form' onSubmit={this.handleSubmit}>
-                    <div className='login-form-username'>
-                        <FormInput 
-                            id='usn' 
-                            type='text' 
-                            name='username'
-                            icon='username'
-                            fill='orange'
-                            value={this.state.username} 
-                            label="Username"
-                            handleChange={this.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className='login-form-password'>
-                        <FormInput 
-                            id='pwd' 
-                            type='password' 
-                            name='password'
-                            icon='password'
-                            fill='orange'
-                            value={this.state.password}
-                            label="Password"
-                            handleChange={this.handleChange}
-                            required
-                        />
-                    </div>
-                    <div className='login-form-actions'>
+                    <FormInput 
+                        id='usn' 
+                        type='text' 
+                        name='username'
+                        icon='username'
+                        fill='orange'
+                        value={this.state.username} 
+                        label="Username"
+                        handleChange={this.handleChange}
+                        required
+                    />
+                    <FormInput 
+                        id='pwd' 
+                        type='password' 
+                        name='password'
+                        icon='password'
+                        fill='orange'
+                        value={this.state.password}
+                        label="Password"
+                        handleChange={this.handleChange}
+                        required
+                    />
+                    <div className='form-actions'>
                         <Link className='action' to='/register'>
                             Don't have an account?
                         </Link>
@@ -64,7 +61,8 @@ class SignIn extends React.Component{
                             Forgot password?
                         </Link>
                     </div>
-                    <div className='login-form-submit'>
+
+                    <div className='form-submit'>
                         <CustomButton type='submit'>Login</CustomButton>
                     </div>
                 </form>
