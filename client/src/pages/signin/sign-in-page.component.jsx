@@ -6,7 +6,7 @@ import Icon from '../../assets/icon.index';
 import './sign-in-page.styles.css';
 
 const SignInPage = () => (
-    <div className='signin-base'>
+    <div className='base'>
         <div className='background'>
             <Link to="/">
                 <Icon className='wentworth' name='wentworth' width={100} />

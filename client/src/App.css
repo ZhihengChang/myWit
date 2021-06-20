@@ -84,11 +84,6 @@ acronym {
   font-family: "Lato", sans-serif;
 }
 
-body {
-  background-color: rgb(255, 60, 0);
-  min-height: 100vh;
-}
-
 /* Center All */
 .all-center {
   display: flex;
@@ -108,8 +103,28 @@ body {
 .svg-icon {
   padding-top: 0.7em;
   min-width: 40px;
-  height: 30px;
+  height: 33px;
   margin: 8.5px 5px -5px 5px;
+}
+
+.base {
+  height: 100vh;
+  background-color: rgb(240, 240, 240);
+}
+
+/* form */
+.form-actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 0px;
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+
+.form-submit{
+  margin-top: 50px;
+  text-align: right;
 }
 
 /* Utilities */

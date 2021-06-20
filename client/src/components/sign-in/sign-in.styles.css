@@ -19,15 +19,6 @@
     margin-bottom: 50px;
 }
 
-.login-form-actions{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px 0px;
-    margin-left: 50px;
-    margin-bottom: 30px;
-}
-
 .action{
     text-decoration: none;
 }
@@ -35,9 +26,4 @@
 .action:hover{
     transition: 0.2s;
     color: orange;
-}
-
-.login-form-submit{
-    margin-top: 50px;
-    text-align: right;
 }

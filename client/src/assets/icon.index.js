@@ -7,8 +7,11 @@ import Profile from './icon/profile.icon';
 import Friends from './icon/friends.icon';
 import Apps from './icon/apps.icon';
 import Search from './icon/search.icon';
+import Id from './icon/id.icon';
 import Username from './icon/username.icon';
+import Email from './icon/email.icon';
 import Password from './icon/password.icon';
+import Confirm from './icon/confirm.icon';
 
 
 const Icon = props => {
@@ -27,10 +30,16 @@ const Icon = props => {
       return <Apps {...props} />;
     case "search":
       return <Search {...props} />;
+    case "id":
+      return <Id {...props} />;
     case "username":
       return <Username {...props} />;
+    case "email":
+      return <Email {...props} />;
     case "password":
       return <Password {...props} />;
+    case "confirm":
+      return <Confirm {...props} />;
     default:
       return <div></div>;
   }

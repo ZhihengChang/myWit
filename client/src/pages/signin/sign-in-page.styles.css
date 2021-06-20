@@ -1,9 +1,4 @@
-.signin-base {
-    height: 100vh;
-    background-color: rgb(240, 240, 240);
-}
-
-.signin-base .background {
+.base .background {
     width: 70%;
     text-align: center;
 }
