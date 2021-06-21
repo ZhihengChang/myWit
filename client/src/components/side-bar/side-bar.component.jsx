@@ -4,8 +4,8 @@ import SidebarOption from '../side-bar-option/side-bar-option.component';
 import './side-bar.styles.css';
 
 class SideBar extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             options: OPTIONS
         }
@@ -16,9 +16,13 @@ class SideBar extends React.Component {
             <div className='sidebar'>
                 <ul>
                     {
-                        this.state.options.map(({id, ...optionProps}) => (
-                            <SidebarOption key={id} {...optionProps} />
-                        ))
+                        this.state.options.map(({id, ...optionProps})=>{
+                            if(this.props.auth_token.length == 0 && optionProps.label != 'Home') 
+                                optionProps.linkUrl = 'signin';
+                            return (
+                                <SidebarOption key={id} {...optionProps} />
+                            )
+                        })
                     }
                 </ul>
             </div>
