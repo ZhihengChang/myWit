@@ -100,7 +100,7 @@ class SignUp extends React.Component{
                         <Link className='action' to='/signin'>
                             Have an account?
                         </Link>
-                        <Link className='action' to='https://wit.edu/about/contact-us'>
+                        <Link className='action' to={{ pathname:'https://wit.edu/about/contact-us'}} target='_blank'>
                             Not a WIT student?
                         </Link>
                     </div>
