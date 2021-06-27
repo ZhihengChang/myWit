@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
 import SideBar from "../../components/side-bar/side-bar.component";
 import SearchBar from "../../components/search-bar/search-bar.component";
-import Users from "../../components/user-list/user-list.component";
-class FriendsPage extends React.Component{
+import PostCardList from "../../components/post-card-list/post-card-list.component";
+import POSTS from './posts.data';
+
+import './moment-page.styles.css';
+class MomentPage extends React.Component{
     constructor(){
         super();
         this.state = {
@@ -13,15 +16,13 @@ class FriendsPage extends React.Component{
 
     render() {
         return (
-            <div>
-                <SearchBar />
+            <div className = 'momentpage'> 
                 <SideBar auth_token={this.state.auth_token}/>
-                <div className="friendpage">
-                    <Users  />
-                </div> 
+                <SearchBar />
+                <PostCardList data={POSTS}/>
             </div>
         )
     }
 }
 
-export default FriendsPage;
+export default MomentPage;

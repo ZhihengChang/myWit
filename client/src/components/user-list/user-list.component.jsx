@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import UserItem from "../user-block/user-block.component";
 import Spinner from "../../assets/gif/Spinner";
 
+import './user-list.styles.css';
+
 export class User extends Component {
   state = {
     user: [
@@ -22,7 +24,7 @@ export class User extends Component {
 
   render() {
     return (
-      <div style={userStyle}>
+      <div className='user-list'>
         {this.state.user.map((user) => (
           <UserItem key={user.id} user={user} />
         ))}
@@ -30,11 +32,5 @@ export class User extends Component {
     );
   }
 }
-
-const userStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(2, 1fr)",
-  gridGap: "1rem",
-};
 
 export default User;

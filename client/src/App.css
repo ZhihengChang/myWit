@@ -198,6 +198,8 @@ body {
 
 /* Cards */
 .card {
+  height: 100px;
+  width: 100px;
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
