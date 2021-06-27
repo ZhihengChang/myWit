@@ -1,0 +1,134 @@
+.post-card  {
+    /* position: relative; */
+    width:60%;
+    /* height: 230px; */
+    min-width: 500px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    box-shadow:0px 2px 7px #b3b3b3;
+    -moz-box-shadow: 0px 2px 7px #b3b3b3;
+    -webkit-box-shadow: 0px 2px 7px #b3b3b3;
+    border-radius:20px;
+    background-color:#ffffff;
+}
+
+.post-card-body {
+    height:67%;
+    width:100%;
+    padding: 20px;
+    border-width:1px 0;
+}
+
+.post-card-header{
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+}
+
+.post-card-header{
+    display: flex;
+    height: 30px;
+    padding: 5px;
+}
+
+.post-card-footer{
+    height: 25px;
+    /* padding: 10px; */
+}
+
+.post-card-header .post-author{
+    color:inherit;
+    width: 100%;
+    padding-left: 10px;
+    font-weight: bolder;
+}
+
+.post-card-header .post-time{
+    color:inherit;
+    width: 80%;
+    padding-right: 20px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.post-content{
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+.post-icon-like{
+    display: inline;
+    width: 40%;
+    height: 100%;
+    /* float: right; */
+    /* margin-left: 20px; */
+    /* padding: 5px 20px; */
+    line-height: 1em;
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* .post-icon-like svg{
+    display: inline;
+    width: 30px;
+    height: 30px;
+    color: black;
+} */
+
+/* .svg-icon path{
+    fill: rgb(85, 85, 85);
+} */
+
+.post-like-count{
+    display: inline;
+    margin: 10;
+}
+
+  
+.post-card-footer {
+    text-align: right;
+    border-bottom-right-radius:20px;
+    border-bottom-left-radius:20px;
+}
+
+.post-card-footer button{
+    outline: none;
+    width: auto;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 1px;
+    text-align: center;
+    color: rgb(54, 54, 54);
+    transition: all ease 0.5s;
+    font-size: 15px;
+}
+
+.post-like span {
+    margin-right: 10px;
+    /* margin-left: 0.5rem; */
+    color: #5f5f5f;
+}
+
+.post-like{
+    outline: none;
+    transition: all ease 0.5s;
+}
+.post-like:focus {
+    background-color: transparent;
+}
+  
+.post-like:focus span {
+    color: #8a8a8a;
+}
+  
+.post-like:hover {
+    border-color: #cc4b37;
+    background-color: transparent;
+}
+  
+.post-like:hover span {
+    color: #cc4b37;
+}
