@@ -12,27 +12,6 @@
   opacity: 87%;
 }
 
-.search-btn {
-  display: inline-block;
-  background: transparent;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.2s ease-in;
-  outline: none;
-  border-radius: 30px;
-}
-
-.search-btn > svg {
-  padding-top: 0.4em;
-}
-
-.search-btn > svg:hover {
-  transform: scale(1.2);
-  transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-}
-
-/* Forms */
 .search {
   display: block;
   text-align: center;
@@ -40,25 +19,6 @@
   margin-left: auto;
   width: 45%;
 }
-
-.form-text {
-  display: block;
-  margin-top: 0.3rem;
-  color: #888;
-}
-
-/* input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
-select,
-textarea {
-  border: 1px solid #ccc;
-  border-radius: 30px;
-  padding: 0.4rem 1.2rem;
-  font-size: 1.4rem;
-  width: 50%;
-} */
 
 .search-input {
   color: gray;
@@ -77,5 +37,26 @@ textarea {
 .search-input:focus {
   outline: none;
   border: 2px solid rgba(255, 166, 0, 0.897);
+}
+
+.search-btn {
+  display: inline-block;
+  background: transparent;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  border-radius: 30px;
+}
+
+
+.search-btn > svg {
+  padding-top: 0.4em;
+}
+
+.search-btn > svg:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 
