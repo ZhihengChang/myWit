@@ -10,16 +10,27 @@ class MomentPage extends React.Component{
     constructor(){
         super();
         this.state = {
-            auth_token: 'token'
+            auth_token: 'token',
+            searchField: ''
         }
     }
 
+    handleChange = (e) => {
+        this.setState({ searchField: e.target.value});
+    }
+
     render() {
+        const searchField = this.state.searchField;
+        const filteredPosts = POSTS.filter(post => 
+            post.type.toLowerCase().includes(searchField.toLowerCase()) ||
+            post.author.toLowerCase().includes(searchField.toLowerCase()) ||
+            post.post_content.toLowerCase().includes(searchField.toLowerCase())   
+        );
         return (
             <div className = 'momentpage'> 
-                <SideBar auth_token={this.state.auth_token}/>
-                <SearchBar />
-                <PostCardList data={POSTS}/>
+                <SideBar auth_token={this.state.auth_token} />
+                <SearchBar handleChange = {this.handleChange} />
+                <PostCardList data={filteredPosts}/>
             </div>
         )
     }
