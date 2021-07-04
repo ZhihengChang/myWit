@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import FormInput from '../form-input/form-input.component';
@@ -17,6 +18,12 @@ class SignIn extends React.Component{
 
     handleSubmit = event => {
         event.preventDefault();
+
+        axios.post('/api/users/login', {
+            username: this.state.username,
+            password: this.state.password,
+        }).then(res => console.log(res.data));
+
         console.log("submit the form");
         this.setState({ username: '', password: '' });
     }
