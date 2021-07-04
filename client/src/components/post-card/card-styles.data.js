@@ -5,7 +5,7 @@ const STYLES = {
             backgroundColor: 'orange',
             color: 'white'
         },
-        body: { color: 'orange' },
+        body: { color: 'gray' },
         footer: {}
     },
     alert: {
@@ -14,7 +14,7 @@ const STYLES = {
             backgroundColor: '#ff3c00',
             color: 'white'
         },
-        body: { color: '#ff3c00' },
+        body: { color: 'gray' },
         footer: {}
     },
     update: {
@@ -23,7 +23,7 @@ const STYLES = {
             backgroundColor: '#31bf0d',
             color: 'white'
         },
-        body: { color: '#31bf0d' },
+        body: { color: 'gray' },
         footer: {}
     },
     activity: {
@@ -32,7 +32,7 @@ const STYLES = {
             backgroundColor: '#8e11b8',
             color: 'white'
         },
-        body: { color: '#8e11b8' },
+        body: { color: 'gray' },
         footer: {}
     },
     post: {
@@ -41,7 +41,7 @@ const STYLES = {
             backgroundColor: '#f0f0f0',
             color: '#696969'
         },
-        body: { color: '#474747' },
+        body: { color: 'gray' },
         footer: {}
     }
 };
