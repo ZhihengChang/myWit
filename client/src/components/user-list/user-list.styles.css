@@ -1,14 +1,13 @@
-.user-list{
-    position: absolute;
-    top: 80px;
-    width: 100%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 150px);
-    grid-row-gap: 1em;
-    grid-column-gap: 1em;
-    padding-top: 1em;
-    padding-right: 15em;
-    padding-left: 15em;
+.user-list {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+  padding-top: 1em;
+  padding-right: 15em;
+  padding-left: 15em;
 }
-

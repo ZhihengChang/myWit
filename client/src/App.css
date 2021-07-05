@@ -113,7 +113,7 @@ body {
 }
 
 /* form */
-.form-actions{
+.form-actions {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -122,7 +122,7 @@ body {
   margin-bottom: 30px;
 }
 
-.form-submit{
+.form-submit {
   margin-top: 50px;
   text-align: right;
 }
@@ -269,8 +269,8 @@ body {
 /* Grid */
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-gap: 100%;
 }
 
 .grid-3 {
@@ -394,4 +394,10 @@ body {
 
 .round-img {
   border-radius: 50%;
+}
+
+.grid-2,
+.grid-3,
+.grid-4 {
+  grid-template-columns: 1fr;
 }

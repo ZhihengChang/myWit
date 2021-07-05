@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import UserItem from "../user-block/user-block.component";
-import Spinner from "../../assets/gif/Spinner";
+// import Spinner from "../../assets/gif/Spinner";
 
 import './user-list.styles.css';
 
