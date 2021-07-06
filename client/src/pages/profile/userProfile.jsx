@@ -21,6 +21,8 @@ class userProfile extends Component {
     // }
 
     render() {
+        const avatar_url = PROFILE.filter(profile => profile.avatar_url);
+        const name = PROFILE.filter(profile => profile.name);
         
         return (
             <Fragment>
@@ -30,11 +32,11 @@ class userProfile extends Component {
                 <SideBar auth_token={this.state.auth_token} />
                 <div className="card grid-2">
                     <div className="all-center">
-                        <img src={PROFILE.avatar_url} 
+                        <img src={avatar_url} 
                         className="round-img" 
                         alt="" 
                         style={{width:"150px"}} />
-                        <h1>{PROFILE.name}</h1>
+                        <h1>{name}</h1>
                         <p>Location: {PROFILE.address}</p>
                     </div> 
                 </div>
