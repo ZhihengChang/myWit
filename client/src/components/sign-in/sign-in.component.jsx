@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import showAlert from '../../util/alert';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
 import './sign-in.styles.css';
+
 
 class SignIn extends React.Component{
     constructor(props){
@@ -16,15 +18,24 @@ class SignIn extends React.Component{
         }
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
+        try {
+            const username = this.state.username;
+            const password = this.state.password;
 
-        axios.post('/api/users/login', {
-            username: this.state.username,
-            password: this.state.password,
-        }).then(res => console.log(res.data));
+            let result = await axios.post(
+                '/api/users/login', 
+                { username, password }
+            );
 
-        console.log("submit the form");
+            console.log(result.data);
+            showAlert('success', `Hello, ${username}`);
+            //go to home page
+        } catch(err) {
+            console.log(err.response.data);
+            showAlert('error', err.response.data.message);
+        }
         this.setState({ username: '', password: '' });
     }
 

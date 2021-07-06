@@ -28,6 +28,6 @@ class SideBar extends React.Component {
             </div>
         )
     }
-}
+};
 
 export default SideBar;
