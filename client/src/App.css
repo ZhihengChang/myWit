@@ -332,6 +332,18 @@ body {
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  font-size: 1rem;
+  font-weight: 200;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary,
@@ -358,20 +370,20 @@ body {
   color: #fff;
 }
 
-.btn-danger,
-.bg-danger,
-.badge-danger,
-.alert-danger {
-  background: var(--danger-color);
-  color: #fff;
+.btn-error,
+.bg-error,
+.badge-error,
+.alert-error {
+  background: #eb4d4b;
+  color: white;
 }
 
 .btn-success,
 .bg-success,
 .badge-success,
 .alert-success {
-  background: var(--success-color);
-  color: #fff;
+  background: #20bf6b;
+  color: white;
 }
 
 .btn-white,

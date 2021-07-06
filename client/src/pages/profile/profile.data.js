@@ -2,7 +2,7 @@ const PROFILE = [
   {
     wit_id: "W00374917",
     avatar_url:
-      "https://robohash.org/ffc146ee01feb25d322525b75d8d7ab8?set=set3&bgset=&size=400x400",
+      "",
     name: "Zhiheng Chang",
     type: "Continuing Student",
     address: "Newton ,MA, United States",

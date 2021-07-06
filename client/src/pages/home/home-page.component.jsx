@@ -10,7 +10,7 @@ class HomePage extends React.Component{
     constructor(){
         super();
         this.state = {
-            auth_token: 'taken',
+            auth_token: '',
             searchField: ''
         }
     }

@@ -1,5 +1,7 @@
 import React from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import showAlert from '../../util/alert';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -18,9 +20,25 @@ class SignUp extends React.Component{
         }
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
-        console.log("submit the form");
+        try {
+            let result = await axios.post('/api/users/signup', { 
+                wit_id: this.state.wit_id,
+                username: this.state.username,
+                email: this.state.email,
+                password: this.state.password,
+                passwordConfirm: this.state.passwordConfirm
+            });
+
+            console.log(result.data);
+            showAlert('success', 'Signed up successfully!');
+            //go to home page
+        } catch(err) {
+            console.log(err.response.data);
+            showAlert('error', err.response.data.message);
+        }
+        
         this.setState({ 
             wit_id: '',
             username: '',
