@@ -12,15 +12,23 @@ class SideBar extends React.Component {
     }
 
     render(){
+        console.log(this.props)
+        const options = this.state.options[this.props.page];
         return (
             <div className='sidebar'>
                 <ul>
                     {
-                        this.state.options.map(({id, ...optionProps})=>{
-                            if(this.props.auth_token.length == 0 && optionProps.label != 'Home') 
-                                optionProps.linkUrl = 'signin';
+                        options.map(({id, ...optionProps})=>{
+                            let authorized = true;
+                            if(this.props.authToken.length === 0 && optionProps.label !== 'Home') {
+                                authorized = false;
+                            }
                             return (
-                                <SidebarOption key={id} {...optionProps} />
+                                <SidebarOption 
+                                    key={id} 
+                                    {...optionProps} 
+                                    authorized={authorized}
+                                />
                             )
                         })
                     }

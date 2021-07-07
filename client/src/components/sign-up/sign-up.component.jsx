@@ -30,10 +30,16 @@ class SignUp extends React.Component{
                 password: this.state.password,
                 passwordConfirm: this.state.passwordConfirm
             });
+            let response = result.data;
 
-            console.log(result.data);
+            console.log(response);
             showAlert('success', 'Signed up successfully!');
-            //go to home page
+            
+            window.setTimeout(()=>{
+                this.props.handleAuthentication(response.token, response.data.user);
+                this.props.history.push('/');
+            }, 1000);
+            
         } catch(err) {
             console.log(err.response.data);
             showAlert('error', err.response.data.message);

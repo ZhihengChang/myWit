@@ -29,7 +29,7 @@ class userProfile extends Component {
                 <Link to="/" className="btn btn-light">
                     Back to Home
                 </Link>
-                <SideBar auth_token={this.state.auth_token} />
+                <SideBar page='profile' authToken={this.props.authToken} />
                 <div className="card grid-2">
                     <div className="all-center">
                         <img src={avatar_url} 

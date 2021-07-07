@@ -7,7 +7,7 @@ class FriendsPage extends React.Component{
     constructor(){
         super();
         this.state = {
-            auth_token: 'token'
+            
         }
     }
 
@@ -15,7 +15,7 @@ class FriendsPage extends React.Component{
         return (
             <div>
                 <SearchBar />
-                <SideBar auth_token={this.state.auth_token}/>
+                <SideBar page='friends' authToken={this.props.authToken}/>
                 <div className="friendpage">
                     <Users  />
                 </div> 

@@ -10,7 +10,6 @@ class MomentPage extends React.Component{
     constructor(){
         super();
         this.state = {
-            auth_token: 'token',
             searchField: ''
         }
     }
@@ -28,7 +27,7 @@ class MomentPage extends React.Component{
         );
         return (
             <div className = 'momentpage'> 
-                <SideBar auth_token={this.state.auth_token} />
+                <SideBar page='moment' authToken={this.props.authToken} />
                 <SearchBar handleChange = {this.handleChange} />
                 <PostCardList data={filteredPosts}/>
             </div>

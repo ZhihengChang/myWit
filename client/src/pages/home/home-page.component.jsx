@@ -10,7 +10,6 @@ class HomePage extends React.Component{
     constructor(){
         super();
         this.state = {
-            auth_token: '',
             searchField: ''
         }
     }
@@ -28,7 +27,7 @@ class HomePage extends React.Component{
         );
         return (
             <div className = 'homepage'> 
-                <SideBar auth_token={this.state.auth_token} />
+                <SideBar page='home' authToken={this.props.authToken} />
                 <SearchBar handleChange = {this.handleChange} />
                 <PostCardList data={filteredPosts} />
             </div>
