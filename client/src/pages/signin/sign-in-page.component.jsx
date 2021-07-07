@@ -5,15 +5,19 @@ import Icon from '../../assets/icon.index';
 
 import './sign-in-page.styles.css';
 
-const SignInPage = () => (
+const SignInPage = (props) => (
     <div className='base'>
         <div className='background'>
             <Link to="/">
                 <Icon className='wentworth' name='wentworth' width={100} />
             </Link>  
         </div>
+        
         <div className='signin'>
-            <SignIn />
+            <SignIn 
+                history={props.history} 
+                handleAuthentication = {props.handleAuthentication}
+            />
         </div>
     </div>
 );

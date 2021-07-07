@@ -28,14 +28,21 @@ class SignIn extends React.Component{
                 '/api/users/login', 
                 { username, password }
             );
+            let response = result.data;
 
-            console.log(result.data);
+            console.log(response);
             showAlert('success', `Hello, ${username}`);
-            //go to home page
+            
+            window.setTimeout(()=>{
+                this.props.handleAuthentication(response.token, response.data.user);
+                this.props.history.push('/');
+            }, 1000);
+            
         } catch(err) {
             console.log(err.response.data);
             showAlert('error', err.response.data.message);
         }
+        
         this.setState({ username: '', password: '' });
     }
 

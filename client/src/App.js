@@ -1,5 +1,6 @@
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
+import * as Storage from './util/storage';
 
 import HomePage from "./pages/home/home-page.component";
 import SignInPage from "./pages/signin/sign-in-page.component";
@@ -15,26 +16,81 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      authToken: null,
-      currentUser: null
+      authToken: Storage.getStateFromSession('authToken') || '',
+      currentUser: Storage.getStateFromSession('currentUser') || null,
     }
   }
 
-  componentDidMount() {
-
+  handleAuthentication = (token, user) => {
+    this.setState({ authToken: token }, 
+      Storage.storeStateInSession('authToken', token)
+    );
+    this.setState({ authToken: token },
+      Storage.storeStateInSession('currentUser', user)
+    );
   }
 
   render(){
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/friends" component={FriendPage} />
-          <Route path="/me" component={ProfilePage} />
-          <Route path="/moment" component={MomentPage} />
-          <Route path="/apps" component={AppPage} />
-          <Route path="/signin" component={SignInPage} />
-          <Route path="/register" component={SignUpPage} />
+
+          <Route exact path="/" 
+            render={(props) => 
+              <HomePage {...props} 
+                authToken={this.state.authToken}
+              />
+            } 
+          /> 
+          
+          <Route path="/friends" 
+            render={(props) => 
+              <FriendPage {...props} 
+                authToken={this.state.authToken}
+              />
+            }  
+          />
+          
+          <Route path="/me"
+            render={(props) => 
+              <ProfilePage {...props} 
+                authToken={this.state.authToken}
+              />
+            } 
+          />
+          
+          <Route path="/moment" 
+            render={(props) => 
+              <MomentPage {...props} 
+                authToken={this.state.authToken}
+              /> 
+            } 
+          />
+
+          <Route path="/apps" 
+            render={(props) => 
+              <AppPage {...props} 
+                authToken={this.state.authToken}
+              />
+            } 
+          />
+          
+          <Route path="/signin" 
+            render={(props) => 
+              <SignInPage {...props} 
+                handleAuthentication = {this.handleAuthentication} 
+              /> 
+            } 
+          />
+          
+          
+          <Route path="/register"
+            render={(props) => 
+              <SignUpPage {...props} 
+                handleAuthentication = {this.handleAuthentication} 
+              />
+            } 
+          />
         </Switch>
       </div>
     );
