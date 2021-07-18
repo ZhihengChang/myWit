@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
 import showAlert from "../../util/alert";
+import { isAuthorized } from "../../util/token";
 import { Link } from 'react-router-dom';
 import Icon from '../../assets/icon.index';
 import "./search-bar.styles.css";
+
 
 export const SearchBar = (props) => (
   <div className='header'>
@@ -14,7 +16,7 @@ export const SearchBar = (props) => (
         onChange={props.handleChange}
       />
       
-      {props.authToken && props.authToken !== 'loggedout' ? (
+      {isAuthorized(props.authToken) ? (
         <Link
           className="sign-btn"
           onClick={async () => {
@@ -26,6 +28,7 @@ export const SearchBar = (props) => (
                 props.handleAuthentication("loggedout", null);
               }
             }catch(err){
+              console.log(err);
               showAlert('error', err.response.data.message);
             }
           }}
