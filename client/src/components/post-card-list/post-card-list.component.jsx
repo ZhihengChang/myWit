@@ -9,10 +9,11 @@ class PostCardList extends React.Component {
     }
 
     render(){
+        console.log(this.props.data);
         return (
             <div className='post-container'>
                 {
-                    this.props.data.map(({id, ...postProps}) => <PostCard key={id} {...postProps} />)
+                    this.props.data.map(({_id, ...postProps}) => <PostCard key={_id} {...postProps} />)
                 }
             </div>
         )

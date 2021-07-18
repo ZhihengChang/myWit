@@ -2,6 +2,7 @@ import React from 'react';
 import OPTIONS from './options.data';
 import SidebarOption from '../side-bar-option/side-bar-option.component';
 import './side-bar.styles.css';
+import { isAuthorized } from '../../util/token';
 
 class SideBar extends React.Component {
     constructor(props) {
@@ -12,15 +13,15 @@ class SideBar extends React.Component {
     }
 
     render(){
-        console.log(this.props)
         const options = this.state.options[this.props.page];
+        const token = this.props.authToken;
         return (
             <div className='sidebar'>
                 <ul>
                     {
                         options.map(({id, ...optionProps})=>{
                             let authorized = true;
-                            if(this.props.authToken.length === 0 && optionProps.label !== 'Home') {
+                            if(!isAuthorized(token) && optionProps.label !== 'Home') {
                                 authorized = false;
                             }
                             return (

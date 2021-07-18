@@ -3,7 +3,7 @@ import STYLES from './card-styles.data';
 
 import './post-card.styles.css';
 
-const PostCard = ({type, author, post_ts, post_content, likes}) => (
+const PostCard = ({type, author, post_ts, content, likes}) => (
     <div 
         className='post-card' 
         style={getStyle(type).general}
@@ -21,7 +21,7 @@ const PostCard = ({type, author, post_ts, post_content, likes}) => (
             className='post-card-body'
             style={(type)?STYLES[type].body:{}}
         >
-            <p className='post-content'>{post_content}</p>
+            <p className='post-content'>{content}</p>
         </div>
         
         <div 
@@ -29,7 +29,7 @@ const PostCard = ({type, author, post_ts, post_content, likes}) => (
             style={(type)?STYLES[type].footer:{}}
         >
             <button className='post-like'>
-                <span>{likes}</span>
+                <span>{likes.length}</span>
             </button>
         </div>
     </div>
