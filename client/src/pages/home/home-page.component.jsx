@@ -27,8 +27,12 @@ class HomePage extends React.Component{
         );
         return (
             <div className = 'homepage'> 
-                <SideBar page='home' authToken={this.props.authToken} />
-                <SearchBar handleChange = {this.handleChange} />
+                <SideBar page='home' authToken={this.props.authToken}/>
+                <SearchBar 
+                    handleChange = {this.handleChange} 
+                    authToken={this.props.authToken} 
+                    handleAuthentication = {this.props.handleAuthentication}
+                />
                 <PostCardList data={filteredPosts} />
             </div>
         )

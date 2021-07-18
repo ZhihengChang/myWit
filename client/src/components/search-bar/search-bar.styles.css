@@ -17,7 +17,7 @@
   text-align: center;
   margin-right: auto;
   margin-left: auto;
-  width: 45%;
+  width: 100%;
 }
 
 .search-input {
@@ -27,7 +27,7 @@
   border-radius: 30px;
   padding: 0.4rem 1.2rem;
   font-size: 1rem;
-  width: 50%;
+  width: 25%;
 }
 
 .search-input:hover {
@@ -39,8 +39,11 @@
   border: 2px solid rgba(255, 166, 0, 0.897);
 }
 
-.search-btn {
+.sign-btn {
   display: inline-block;
+  position: absolute;
+  right: 0;
+  margin: 0.6em 2em;
   background: transparent;
   font-size: 1rem;
   border: none;
@@ -51,11 +54,11 @@
 }
 
 
-.search-btn > svg {
+.sign-btn > svg {
   padding-top: 0.4em;
 }
 
-.search-btn > svg:hover {
+.sign-btn > svg:hover {
   transform: scale(1.2);
   transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
