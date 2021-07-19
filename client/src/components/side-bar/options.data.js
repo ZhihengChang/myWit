@@ -29,7 +29,7 @@ const OPTIONS = {
     profile:[{
         id: 1,
         label: 'Back',
-        icon: 'home',
+        icon: 'back',
         linkUrl: '',
     },{
         id: 3,
@@ -61,19 +61,19 @@ const OPTIONS = {
     moment: [{
         id: 1,
         label: 'Back',
-        icon: 'home',
+        icon: 'back',
         linkUrl: '',
     },{
         id: 3,
         label: 'Create',
-        icon: 'profile',
+        icon: 'write',
         linkUrl: '',
     }],
 
     friends: [{
         id: 1,
         label: 'Back',
-        icon: 'home',
+        icon: 'back',
         linkUrl: '',
     },{
         id: 3,
@@ -85,7 +85,7 @@ const OPTIONS = {
     apps: [{
         id: 1,
         label: 'Back',
-        icon: 'home',
+        icon: 'back',
         linkUrl: '',
     },{
         id: 3,

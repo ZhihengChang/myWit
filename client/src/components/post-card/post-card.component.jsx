@@ -1,9 +1,10 @@
 import React from 'react';
 import STYLES from './card-styles.data';
+import Icon from '../../assets/icon.index'
 
 import './post-card.styles.css';
 
-const PostCard = ({type, author, post_ts, content, likes}) => (
+const PostCard = ({type, author, post_ts, content, likes, comments}) => (
     <div 
         className='post-card' 
         style={getStyle(type).general}
@@ -28,9 +29,14 @@ const PostCard = ({type, author, post_ts, content, likes}) => (
             className='post-card-footer'
             style={(type)?STYLES[type].footer:{}}
         >
-            <button className='post-like'>
+            <div className='post-action like'>
+                <Icon name={"like"} className={"action"} width={5} fill={"#f55045"}/>
                 <span>{likes.length}</span>
-            </button>
+            </div>
+            <div className='post-action comment'>
+                <Icon name={"comment"} className={"action"} width={5} fill={"#ff863b"}/>
+                <span>{comments.length}</span>
+            </div>
         </div>
     </div>
 );

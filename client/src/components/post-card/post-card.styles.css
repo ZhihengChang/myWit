@@ -32,8 +32,7 @@
 }
 
 .post-card-footer{
-    height: 25px;
-    /* padding: 10px; */
+    height: 35px;
 }
 
 .post-card-header .post-author{
@@ -55,37 +54,6 @@
     line-height: 1.5;
     white-space: pre-line;
 }
-
-.post-icon-like{
-    display: inline;
-    width: 40%;
-    height: 100%;
-    /* float: right; */
-    /* margin-left: 20px; */
-    /* padding: 5px 20px; */
-    line-height: 1em;
-    font-size: 12px;
-    font-family: "Open Sans", sans-serif;
-    cursor: pointer;
-    text-align: center;
-}
-
-/* .post-icon-like svg{
-    display: inline;
-    width: 30px;
-    height: 30px;
-    color: black;
-} */
-
-/* .svg-icon path{
-    fill: rgb(85, 85, 85);
-} */
-
-.post-like-count{
-    display: inline;
-    margin: 10;
-}
-
   
 .post-card-footer {
     text-align: right;
@@ -93,29 +61,35 @@
     border-bottom-left-radius:20px;
 }
 
-.post-card-footer button{
-    outline: none;
-    width: auto;
-    border: none;
-    background-color: transparent;
-    text-decoration: none;
-    padding: 1px;
+.post-action {
+    display: inline;
+    width: 10%;
+    max-width: 60px;
     text-align: center;
-    color: rgb(54, 54, 54);
-    transition: all ease 0.5s;
-    font-size: 15px;
+    cursor: pointer;
 }
 
-.post-like span {
+.comment{
+    margin-right: 2%;
+}
+
+.action{
+    display: inline;
+    min-width: 30px;
+    height: 25px;
+    margin: 0px;
+    color: black;
+}
+
+.action:hover{
+    transform: scale(1.2);
+}
+
+.post-action span {
     margin-right: 10px;
-    /* margin-left: 0.5rem; */
-    color: #5f5f5f;
+    color: #858585;
 }
 
-.post-like{
-    outline: none;
-    transition: all ease 0.5s;
-}
 .post-like:focus {
     background-color: transparent;
 }

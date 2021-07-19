@@ -48,6 +48,7 @@ class App extends React.Component {
             render={(props) => 
               <FriendPage {...props} 
                 authToken={this.state.authToken}
+                handleAuthentication = {this.handleAuthentication}
               />
             }  
           />

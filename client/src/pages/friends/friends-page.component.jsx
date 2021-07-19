@@ -14,7 +14,11 @@ class FriendsPage extends React.Component{
     render() {
         return (
             <div>
-                <SearchBar />
+                <SearchBar 
+                    handleChange = {this.handleChange} 
+                    authToken={this.props.authToken} 
+                    handleAuthentication = {this.props.handleAuthentication}
+                />
                 <SideBar page='friends' authToken={this.props.authToken}/>
                 <div className="friendpage">
                     <Users  />
