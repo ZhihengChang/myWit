@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
 import showAlert from "../../util/alert";
 import { isAuthorized } from "../../util/token";
@@ -7,7 +7,7 @@ import Icon from '../../assets/icon.index';
 import "./search-bar.styles.css";
 
 
-export const SearchBar = (props) => (
+const SearchBar = (props) => (
   <div className='header'>
     <div className='search'>
       <input
@@ -19,11 +19,11 @@ export const SearchBar = (props) => (
       {isAuthorized(props.authToken) ? (
         <Link
           className="sign-btn"
+          to="/"
           onClick={async () => {
-            console.log("logout");
             try{
               let result = await axios.get('/api/users/logout');
-              if(result.data.status == 'success'){
+              if(result.data.status === 'success'){
                 showAlert('success', 'Logged out');
                 props.handleAuthentication("loggedout", null);
               }
@@ -33,14 +33,14 @@ export const SearchBar = (props) => (
             }
           }}
         >
-          <Icon name="signout" width={10} fill={"#ccc"}/>
+          <Icon name="signout" width={10} fill={"#bf3030"}/>
         </Link>
       ):(
         <Link
           className="sign-btn"
           to='/signin'
         >
-          <Icon name="signin" width={10} fill={"#ccc"}/>
+          <Icon name="signin" width={10} fill={"#34ad32"}/>
         </Link>
       )}
       

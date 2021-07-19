@@ -20,6 +20,7 @@ const postSchema = new mongoose.Schema({
         trim: true,
     },
 
+    official:       { type: Boolean, default: false },
     attachment:     { type: Array, default: [String] },
     post_ts:        { type: Date, default: new Date },
     likes:          { type: Array, default: [String] }, //user_id
