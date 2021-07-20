@@ -8,7 +8,10 @@ import Friends from './icon/friends.icon';
 import Apps from './icon/apps.icon';
 import Search from './icon/search.icon';
 import Back from './icon/back.icon';
+import Close from './icon/close.icon';
 import Write from './icon/write.icon';
+import Pen from './icon/pen.icon';
+import Post from './icon/post.icon';
 import Signin from './icon/signin.icon';
 import Signout from './icon/signout.icon';
 import Like from './icon/like.icon';
@@ -38,8 +41,14 @@ const Icon = props => {
       return <Search {...props} />;
     case "back":
       return <Back {...props} />;
+    case "close":
+      return <Close {...props} />;
     case "write":
       return <Write {...props} />;
+    case "pen":
+      return <Pen {...props} />;
+    case "post":
+      return <Post {...props} />;
     case "signin":
       return <Signin {...props} />;
     case "signout":

@@ -1,0 +1,69 @@
+.webmodal{
+display: block;
+position: fixed;
+z-index: 1;
+left: 0%;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+}
+
+.modal-footer, .modal-header{
+border: none;
+}
+
+.modal-footer{
+    display: flex;
+    align-items: center;
+}
+
+.modal-close{
+color: #ccc;
+float: right;
+margin-right: 15px;
+font-size: 30px;
+}
+
+.modal-title{
+color: rgb(122, 122, 122);
+font-size: 20px;
+}
+
+.modal-footer button{
+display: inline-block;
+background-color: transparent;
+height: 20px;
+width: 40px;
+padding: 5px 20px;
+margin-right: 5%;
+border: none;
+}
+
+.icon{
+    min-width: 30px;
+    height: 25px;
+    margin: 10px 10px 0px 15px;
+    padding-top: 5px;
+}
+
+.close{
+    min-width: 30px;
+    height: 15px;
+    margin: 0px;
+    padding-top: 0px;
+}
+
+.close:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+@keyframes modalopen{
+from{ opacity: 0 }
+to { opacity: 1 }
+}
+
+form textarea{
+resize: none;
+}

@@ -15,20 +15,27 @@ class SideBar extends React.Component {
     render(){
         const options = this.state.options[this.props.page];
         const token = this.props.authToken;
+        const onClickFunctions = this.props.onClickFunctions;
+        
         return (
             <div className='sidebar'>
                 <ul>
                     {
                         options.map(({id, ...optionProps})=>{
                             let authorized = true;
-                            if(!isAuthorized(token) && optionProps.label !== 'Home') {
+                            const label = optionProps.label;
+                            const onClickFunction = (onClickFunctions)? onClickFunctions[label.toLowerCase()] : null
+
+                            if(!isAuthorized(token) && label !== 'Home') {
                                 authorized = false;
                             }
+                            
                             return (
                                 <SidebarOption 
                                     key={id} 
                                     {...optionProps} 
                                     authorized={authorized}
+                                    onclick={onClickFunction}
                                 />
                             )
                         })

@@ -3,15 +3,17 @@ import Icon from '../../assets/icon.index'
 import showAlert from '../../util/alert';
 import { withRouter } from 'react-router-dom';
 
-const SidebarOption = ({label, icon, linkUrl, history, authorized}) => (
+const SidebarOption = ({label, icon, linkUrl, history, authorized, onclick}) => (
     <li>
         <div
             className={label.split(' ').join('')}
             onClick={() => {
-                if(authorized)
-                    history.push(`${linkUrl}`);
-                else
+                if(authorized){
+                    if(onclick) onclick();
+                    else history.push(`${linkUrl}`);
+                }else{
                     showAlert('error', 'Please sign in');
+                }
             }} 
         >
             <Icon name={icon.toLowerCase()} width={10} />
