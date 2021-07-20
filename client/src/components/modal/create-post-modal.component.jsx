@@ -36,26 +36,6 @@ class CreatePostModal extends React.Component{
         this.setState({ content: '' });
     }
 
-    // #postModal.webmodal
-    // .modal-post-create
-    //     .modal-header
-            
-    //         span.modal-title #[img.svg-icon(src='views/img/svgicon/writing.svg' alt='writing icon') ] New Moment
-                
-    //         span.modal-close &times
-    
-    //     form.form--create-post
-    //         .div__post-content 
-    //             textarea#post-content(name='content')
-    //         .div__post-attachment
-    //             label.form-file-upload(for='post-attachment') #[img.svg-icon(src='views/img/svgicon/cloud-computing.svg' alt='writing icon') ]  Upload Pictures
-    //             input#post-attachment(type='file', name='attachment')
-    //         //- .div__post-option
-    //         //-     input#post-option-public(type='radio', name='privacy', value='public')
-    //         //-     input#post-option-public(type='radio', name='privacy', value='private')
-    //         .modal-footer
-    //             button(type='submit') post
-
     render() {
         return(
             <div className='webmodal'>
