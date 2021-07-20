@@ -4,9 +4,10 @@ import Icon from '../../assets/icon.index'
 
 import './post-card.styles.css';
 
-const PostCard = ({type, author, post_ts, content, likes, comments}) => (
+const PostCard = ({_id, type, author, post_ts, content, likes, comments}) => (
     <div 
         className='post-card' 
+        id={_id}
         style={getStyle(type).general}
     >
         <div 

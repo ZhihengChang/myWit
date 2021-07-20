@@ -65,6 +65,7 @@ class App extends React.Component {
             render={(props) => 
               <MomentPage {...props} 
                 authToken={this.state.authToken}
+                currentUser={this.state.currentUser}
                 handleAuthentication = {this.handleAuthentication}
               /> 
             } 

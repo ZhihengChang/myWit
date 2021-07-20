@@ -11,6 +11,8 @@
     -webkit-box-shadow: 0px 2px 7px #b3b3b3;
     border-radius:20px;
     background-color:#ffffff;
+    animation-name: slidein;
+    animation-duration: 2.3s;
 }
 
 .post-card-body {
@@ -105,4 +107,14 @@
   
 .post-like:hover span {
     color: #cc4b37;
+}
+
+@keyframes slidein {
+from {
+margin-top: 100%;
+}
+
+to {
+margin-top: 1%;
+}
 }

@@ -7,7 +7,7 @@ const PostCardList = ({data}) => {
     return (
     <div className='post-container'>
         {
-            data.map(({_id, ...postProps}) => <PostCard key={_id} {...postProps} />)
+            data.map((post, index) => <PostCard key={index}  {...post} />)
         }
     </div>
 )}

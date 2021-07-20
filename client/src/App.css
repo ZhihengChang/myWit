@@ -372,6 +372,8 @@ body {
 .alert-error {
   background: #eb4d4b;
   color: white;
+  animation-name: fadeIn;
+  animation-duration: 1s;
 }
 
 .btn-success,
@@ -380,6 +382,8 @@ body {
 .alert-success {
   background: #20bf6b;
   color: white;
+  animation-name: fadeIn;
+  animation-duration: 1s;
 }
 
 .btn-white,
@@ -409,3 +413,9 @@ body {
 .grid-4 {
   grid-template-columns: 1fr;
 }
+
+@keyframes fadeIn{
+from{ opacity: 0 }
+to { opacity: 1 }
+}
+  

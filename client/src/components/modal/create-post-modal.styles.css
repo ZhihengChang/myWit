@@ -1,0 +1,72 @@
+.modal-post-create{
+width: 50%;
+height: 280px;
+margin: 20% auto;
+background-color: rgba(255, 166, 0);
+box-shadow: 0 5px 8px 0 rgba(0, 0, 0, .2), 0 7px 20px 0 rgba(0, 0, 0, .2);
+border-radius: 1.2em;
+animation-name: modalopen;
+animation-duration: .5s;
+}
+
+.modal-title{
+color: white;
+}
+
+.div__post-content{
+width: 100%;
+height: 180px;
+padding: 0 1px 0 1px;
+}
+
+.div__post-content textarea{
+font-size: 15px;
+background-color: rgba(255, 166, 0);
+color:white;
+height: 100%;
+width: 100%;
+border: none;
+padding: 10px 20px;
+}
+
+.div__post-content textarea:focus {
+color:white;
+outline: none !important;
+box-shadow: 0 5px 8px 0 rgba(0, 0, 0, .2);
+/* transition: background-color 0.5s */
+}
+
+.div__post-content textarea::placeholder{
+    color: white;
+}
+.div__post-attachment{
+    display: inline-block;
+    flex: 1;
+}
+.div__post-attachment input[type="file"] {
+display: none;
+}
+
+.form-file-upload{
+font-size: 12px;
+color: white;
+border: 1px solid white;
+display: inline-block;
+padding: 2px 6px;
+padding-right: 12px;
+cursor: pointer;
+border-radius: 6px;
+margin-top: 10px;
+margin-left: 10px;
+}
+
+.post{
+    height: 25px;
+    margin:0;
+    padding-top: 0;
+}
+
+.post:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}

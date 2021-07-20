@@ -30,7 +30,6 @@ class SignIn extends React.Component{
             );
             let response = result.data;
 
-            console.log(response);
             showAlert('success', `Hello, ${username}`);
             
             window.setTimeout(()=>{

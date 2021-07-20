@@ -5,6 +5,7 @@ import showAlert from "../../util/alert";
 import SideBar from "../../components/side-bar/side-bar.component";
 import SearchBar from "../../components/search-bar/search-bar.component";
 import PostCardList from "../../components/post-card-list/post-card-list.component";
+import CreatePostModal from "../../components/modal/create-post-modal.component";
 
 import './moment-page.styles.css';
 class MomentPage extends React.Component{
@@ -12,6 +13,7 @@ class MomentPage extends React.Component{
         super();
         this.state = {
             searchField: '',
+            createPost: false,
             posts: []
         }
     }
@@ -35,9 +37,15 @@ class MomentPage extends React.Component{
         }
     }
 
+    openAndCloseModal = () => {
+        this.setState({ createPost: !this.state.createPost })
+    }
+
     render() {
         const searchField = this.state.searchField;
+        const createPost = this.state.createPost;
         const posts = this.state.posts;
+        const user = this.props.currentUser;
 
         const filteredPosts = posts.filter(post => 
             post.type.toLowerCase().includes(searchField.toLowerCase()) ||
@@ -46,13 +54,24 @@ class MomentPage extends React.Component{
         );
         return (
             <div className = 'momentpage'> 
-                <SideBar page='moment' authToken={this.props.authToken} />
+                <SideBar 
+                    page='moment' 
+                    authToken={this.props.authToken} 
+                    onClickFunctions={
+                        {create: this.openAndCloseModal}
+                        //other functions on sidebar
+                    }
+                />
                 <SearchBar 
                     handleChange = {this.handleChange} 
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}
                 />
                 <PostCardList data={filteredPosts}/>
+                {
+                    createPost && <CreatePostModal author={user.username} close={this.openAndCloseModal}/>
+                }
+                
             </div>
         )
     }
