@@ -32,6 +32,7 @@ class HomePage extends React.Component{
     render() {
         const searchField = this.state.searchField;
         const schoolPosts = this.state.schoolPosts;
+        const user = this.props.currentUser;
 
         const filteredPosts = schoolPosts.filter(post => 
             post.type.toLowerCase().includes(searchField.toLowerCase()) ||
@@ -46,7 +47,7 @@ class HomePage extends React.Component{
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}
                 />
-                <PostCardList data={filteredPosts} />
+                <PostCardList data={filteredPosts} userid={user._id}/>
             </div>
         )
     }

@@ -96,9 +96,12 @@ exports.likePost = catchAsync(async function (req, res, next) {
         );
     }
 
-    if(post.likes.indexOf(user_id) != -1 && user.likes.indexOf(post_id) != -1){
-        util.findAndRemove(post.likes, user_id)
-        util.findAndRemove(user.likes, post_id)
+    const post_likes_index_userid = post.likes.indexOf(user_id);
+    const user_likes_index_postid = user.likes.indexOf(post_id);
+
+    if(post_likes_index_userid != -1 && user_likes_index_postid != -1){
+        post.likes.splice(post_likes_index_userid, 1);
+        user.likes.splice(user_likes_index_postid, 1);
         message = 'disliked';
     }else{
         // Add user_id and post_id to post and user

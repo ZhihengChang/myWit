@@ -22,12 +22,10 @@ class App extends React.Component {
   }
 
   handleAuthentication = (token, user) => {
-    this.setState({ authToken: token }, 
+    this.setState({ authToken: token, currentUser: user }, () => {
       Storage.storeStateInSession('authToken', token)
-    );
-    this.setState({ authToken: token },
       Storage.storeStateInSession('currentUser', user)
-    );
+    });
   }
 
   render(){
@@ -39,6 +37,7 @@ class App extends React.Component {
             render={(props) => 
               <HomePage {...props} 
                 authToken={this.state.authToken}
+                currentUser={this.state.currentUser}
                 handleAuthentication = {this.handleAuthentication}
               />
             } 

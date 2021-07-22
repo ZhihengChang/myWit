@@ -27,6 +27,11 @@ class MomentPage extends React.Component{
             this.props.history.push('/');
             showAlert('error', 'Please sign in')
         }
+        this.fetchPosts();
+    }
+
+    fetchPosts = async () => {
+        console.log("fetch from server");
         try{
             const query = "official=false&sort=-post_ts";
             const result = await axios.get(`/api/posts?${query}`);
@@ -46,7 +51,7 @@ class MomentPage extends React.Component{
         const createPost = this.state.createPost;
         const posts = this.state.posts;
         const user = this.props.currentUser;
-
+        
         const filteredPosts = posts.filter(post => 
             post.type.toLowerCase().includes(searchField.toLowerCase()) ||
             post.author.toLowerCase().includes(searchField.toLowerCase()) ||
@@ -67,9 +72,9 @@ class MomentPage extends React.Component{
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}
                 />
-                <PostCardList data={filteredPosts}/>
+                <PostCardList data={filteredPosts} userid={user._id}/>
                 {
-                    createPost && <CreatePostModal author={user.username} close={this.openAndCloseModal}/>
+                    createPost && <CreatePostModal author={user.username} close={this.openAndCloseModal} fetch={this.fetchPosts}/>
                 }
                 
             </div>
