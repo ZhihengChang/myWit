@@ -20,6 +20,7 @@ const postSchema = new mongoose.Schema({
         trim: true,
     },
 
+    type:           { type: String, default: 'post' },
     official:       { type: Boolean, default: false },
     attachment:     { type: Array, default: [String] },
     post_ts:        { type: Date, default: new Date },

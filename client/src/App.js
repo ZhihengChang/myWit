@@ -22,12 +22,10 @@ class App extends React.Component {
   }
 
   handleAuthentication = (token, user) => {
-    this.setState({ authToken: token }, 
+    this.setState({ authToken: token, currentUser: user }, () => {
       Storage.storeStateInSession('authToken', token)
-    );
-    this.setState({ authToken: token },
       Storage.storeStateInSession('currentUser', user)
-    );
+    });
   }
 
   render(){

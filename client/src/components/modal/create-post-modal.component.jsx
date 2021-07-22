@@ -18,8 +18,11 @@ class CreatePostModal extends React.Component{
     handleSubmit = async event => {
         event.preventDefault();
         try {
+            // const post_content = document.getElementById("post-content").value;
+            // this.setState({ content: post_content });
+            
             const author = this.props.author;
-            const content = this.state.password;
+            const content = this.state.content;
 
             let result = await axios.post(
                 '/api/posts/create', 
@@ -27,13 +30,16 @@ class CreatePostModal extends React.Component{
             );
             let response = result.data;
             console.log(response);
+
+            setTimeout(this.props.close, 1000);
+
             
         } catch(err) {
             console.log(err.response.data);
             showAlert('error', err.response.data.message);
         }
         
-        this.setState({ content: '' });
+        this.setState({ content: '' }, this.props.fetch);
     }
 
     render() {
@@ -49,12 +55,13 @@ class CreatePostModal extends React.Component{
                             <Icon name='close' width={10} fill={"white"} className={"close"}/>
                         </span>
                     </div>
-                    <form className='form--create-post'>
+                    <form className='form--create-post' onSubmit={this.handleSubmit}>
                         <div className='div__post-content'>
                             <textarea 
-                                id='post-content' 
+                                id='post-content'
                                 name='content'
                                 placeholder='Right now I am thinking ...'
+                                onChange={(e) => {this.setState({content: e.target.value})}}
                             ></textarea>
                         </div>
                         
