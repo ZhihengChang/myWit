@@ -51,7 +51,7 @@ class MomentPage extends React.Component{
         const createPost = this.state.createPost;
         const posts = this.state.posts;
         const user = this.props.currentUser;
-        
+
         const filteredPosts = posts.filter(post => 
             post.type.toLowerCase().includes(searchField.toLowerCase()) ||
             post.author.toLowerCase().includes(searchField.toLowerCase()) ||
@@ -72,7 +72,7 @@ class MomentPage extends React.Component{
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}
                 />
-                <PostCardList data={filteredPosts} userid={user._id}/>
+                <PostCardList data={filteredPosts} userid={(user)? user._id : ''}/>
                 {
                     createPost && <CreatePostModal author={user.username} close={this.openAndCloseModal} fetch={this.fetchPosts}/>
                 }

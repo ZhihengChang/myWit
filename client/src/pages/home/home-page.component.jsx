@@ -47,7 +47,7 @@ class HomePage extends React.Component{
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}
                 />
-                <PostCardList data={filteredPosts} userid={user._id}/>
+                <PostCardList data={filteredPosts} userid={(user)? user._id : ''}/>
             </div>
         )
     }
