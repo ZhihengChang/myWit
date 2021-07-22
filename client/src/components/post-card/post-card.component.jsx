@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import STYLES from './card-styles.data';
 import Icon from '../../assets/icon.index'
+import showAlert from '../../util/alert';
 
 import './post-card.styles.css';
 
@@ -36,17 +37,19 @@ class PostCard extends React.Component {
                 user_id: this.props.userid, 
                 post_id: this.state.post_id
             });
+
+            const liked = this.state.liked;
+            let numberOfLikes = this.state.numberOfLikes;
+            this.setState({ 
+                liked: !liked, 
+                numberOfLikes: (liked)? 
+                    numberOfLikes - 1 : numberOfLikes + 1
+            });
+            
         }catch(e){
             console.log(e);
-        }
-        
-        const liked = this.state.liked;
-        let numberOfLikes = this.state.numberOfLikes;
-        this.setState({ 
-            liked: !liked, 
-            numberOfLikes: (liked)? 
-                numberOfLikes - 1 : numberOfLikes + 1
-        });
+            showAlert('error', 'Please sign in');
+        }   
     }
 
     render(){
