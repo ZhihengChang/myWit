@@ -13,8 +13,8 @@ class MomentPage extends React.Component{
         super();
         this.state = {
             searchField: '',
+            posts: [],
             createPost: false,
-            posts: []
         }
     }
 
@@ -74,7 +74,12 @@ class MomentPage extends React.Component{
                 />
                 <PostCardList data={filteredPosts} userid={(user)? user._id : ''}/>
                 {
-                    createPost && <CreatePostModal author={user.username} close={this.openAndCloseModal} fetch={this.fetchPosts}/>
+                    createPost && 
+                        <CreatePostModal 
+                            author={user.username} 
+                            close={this.openAndCloseModal} 
+                            fetch={this.fetchPosts}
+                        />
                 }
                 
             </div>

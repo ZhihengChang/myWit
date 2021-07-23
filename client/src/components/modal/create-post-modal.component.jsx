@@ -18,23 +18,26 @@ class CreatePostModal extends React.Component{
     handleSubmit = async event => {
         event.preventDefault();
         try {
-            // const post_content = document.getElementById("post-content").value;
-            // this.setState({ content: post_content });
             
             const author = this.props.author;
             const content = this.state.content;
 
             let result = await axios.post(
                 '/api/posts/create', 
-                { author, content }
+                { author, content, post_ts: new Date()}
             );
             let response = result.data;
             console.log(response);
-
-            setTimeout(this.props.close, 1000);
-
             
+            showAlert('success', 'New moment posted!');
+            setTimeout(()=>{
+                this.props.close();
+                window.location.reload();
+            }, 500);
+            
+
         } catch(err) {
+            console.log(err);
             console.log(err.response.data);
             showAlert('error', err.response.data.message);
         }
