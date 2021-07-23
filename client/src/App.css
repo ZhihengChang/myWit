@@ -418,4 +418,14 @@ body {
 from{ opacity: 0 }
 to { opacity: 1 }
 }
+
+@keyframes slidein {
+from {
+margin-top: 100%;
+}
+
+to {
+margin-top: 1%;
+}
+}
   
