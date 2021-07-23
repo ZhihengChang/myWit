@@ -4,8 +4,8 @@ import SideBar from "../../components/side-bar/side-bar.component";
 import PROFILE from "./profile.data"
 
 class userSchedule extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             auth_token: 'taken',
         }
