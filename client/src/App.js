@@ -64,7 +64,7 @@ class App extends React.Component {
           />
 
           <Route
-            path="/schdule"
+            path="/schedule"
             render={(props) => (
               <SchedulePage {...props} authToken={this.state.authToken} />
             )}
