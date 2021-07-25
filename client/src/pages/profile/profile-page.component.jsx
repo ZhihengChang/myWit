@@ -4,6 +4,7 @@ import axios from 'axios';
 import NameCard from '../../components/name-card/name-card.component';
 import SideBar from "../../components/side-bar/side-bar.component";
 import PostCardList from '../../components/post-card-list/post-card-list.component';
+import ProfileInfoModal from '../../components/modal/profile-info-modal.component';
 
 import "./profile-page.styles.css";
 
@@ -13,6 +14,7 @@ class ProfilePage extends Component {
         this.state = {
            student: null,
            studentPosts: [],
+           showInfo: false,
         }
     }
 
@@ -46,10 +48,15 @@ class ProfilePage extends Component {
         }
     }
 
+    openAndCloseInfo = () => {
+        this.setState({ showInfo: !this.state.showInfo });
+    }
+
     render() {
         const user = this.props.currentUser;
         const student = this.state.student;
         const studentPosts = this.state.studentPosts;
+        const showInfo = this.state.showInfo;
         const listStyle = {
             position: 'absolute',
             top: '300px',
@@ -59,7 +66,14 @@ class ProfilePage extends Component {
 
         return (
             <div className = 'profilepage'>
-                <SideBar page='profile' authToken={this.props.authToken} />
+                <SideBar 
+                    page='profile' 
+                    authToken={this.props.authToken} 
+                    onClickFunctions={
+                        {information: this.openAndCloseInfo}
+                    }
+                />
+
                 <div className = 'blcok top'>
                 {
                     student && <NameCard student={student} avatar={user.avatar}/>
@@ -73,6 +87,9 @@ class ProfilePage extends Component {
                         styles={listStyle}
                     />
                 </div>
+                {
+                    showInfo && <ProfileInfoModal close={this.openAndCloseInfo}/>
+                }
                 
             </div>
         )
