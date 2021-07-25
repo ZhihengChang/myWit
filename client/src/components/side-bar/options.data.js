@@ -59,12 +59,6 @@ const OPTIONS = {
     },
     {
       id: 5,
-      label: "Moments",
-      icon: "apps",
-      linkUrl: "",
-    },
-    {
-      id: 6,
       label: "Setting",
       icon: "apps",
       linkUrl: "",

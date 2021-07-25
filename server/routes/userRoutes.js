@@ -30,4 +30,7 @@ router.route('/:id')
         userController.deleteUser
     );
 
+router.route('/student/:wit_id')
+    .get(userController.getStudent);
+
 module.exports = router;
