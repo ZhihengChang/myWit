@@ -7,6 +7,7 @@ import Profile from './icon/profile.icon';
 import Friends from './icon/friends.icon';
 import Apps from './icon/apps.icon';
 import Search from './icon/search.icon';
+import Information from './icon/information.icon';
 import Back from './icon/back.icon';
 import Close from './icon/close.icon';
 import Write from './icon/write.icon';
@@ -39,6 +40,8 @@ const Icon = props => {
       return <Apps {...props} />;
     case "search":
       return <Search {...props} />;
+    case "information":
+      return <Information {...props} />;
     case "back":
       return <Back {...props} />;
     case "close":

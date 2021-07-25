@@ -42,7 +42,7 @@ const OPTIONS = {
     {
       id: 3,
       label: "Information",
-      icon: "profile",
+      icon: "information",
       linkUrl: "",
     },
     {
