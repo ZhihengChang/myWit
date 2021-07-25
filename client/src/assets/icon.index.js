@@ -6,7 +6,13 @@ import Moment from './icon/moment.icon';
 import Profile from './icon/profile.icon';
 import Friends from './icon/friends.icon';
 import Apps from './icon/apps.icon';
+import Add from './icon/add.icon';
+import Remove from './icon/remove.icon';
 import Search from './icon/search.icon';
+import Information from './icon/information.icon';
+import Schedule from './icon/schedule.icon';
+import Network from './icon/network.icon';
+import Settings from './icon/settings.icon';
 import Back from './icon/back.icon';
 import Close from './icon/close.icon';
 import Write from './icon/write.icon';
@@ -37,8 +43,20 @@ const Icon = props => {
       return <Friends {...props} />;
     case "apps":
       return <Apps {...props} />;
+    case "add":
+      return <Add {...props} />;
+    case "remove":
+      return <Remove {...props} />; 
     case "search":
       return <Search {...props} />;
+    case "information":
+      return <Information {...props} />;
+    case "schedule":
+      return <Schedule {...props} />;
+    case "network":
+      return <Network {...props} />;
+    case "settings":
+      return <Settings {...props} />;
     case "back":
       return <Back {...props} />;
     case "close":

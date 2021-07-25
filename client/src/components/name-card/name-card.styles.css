@@ -19,7 +19,7 @@
     box-shadow:0px 2px 7px #b3b3b3;
     -moz-box-shadow: 0px 2px 7px #b3b3b3;
     border-radius:20px;
-    background-color: rgba(255, 166, 0, 0.897);
+    background-color: rgba(255, 166, 0);
     display: flex;                  /* establish flex container */
     flex-direction: row;            /* default value; can be omitted */
     flex-wrap: nowrap;              /* default value; can be omitted */

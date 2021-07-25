@@ -88,7 +88,7 @@ class ProfilePage extends Component {
                     />
                 </div>
                 {
-                    showInfo && <ProfileInfoModal close={this.openAndCloseInfo}/>
+                    showInfo && <ProfileInfoModal student={student} close={this.openAndCloseInfo}/>
                 }
                 
             </div>
