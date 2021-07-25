@@ -37,8 +37,9 @@ const limiter = rateLimit({
 
 // app.use('/api', limiter);
 
-// const parentDir = path.join(__dirname, '../');
-// const clientDir = path.join(parentDir, 'client');
+const dir = path.join(__dirname, '../data');
+console.log(dir);
+app.use(express.static(dir))
 
 // Built-in bodyParser middleware
 app.use(express.urlencoded({ extended: false }));

@@ -136,6 +136,38 @@ body {
 }
 
 /* Text Styles*/
+
+.heading-secondary {
+  font-size: 2.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+  display: inline-block;
+}
+
+.heading-third {
+  font-size: 2rem;
+  font-weight: 250;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+  /* display: inline-block; */
+}
+
+.heading-fourth {
+  font-size: 1.2rem;
+  font-weight: 100;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+  /* display: inline-block; */
+}
+
 .x-large {
   font-size: 4rem;
   line-height: 1.2;

@@ -41,7 +41,10 @@ exports.getUser = catchAsync( async function (req, res, next) {
  * Get student object by wit_id and store
  */
 exports.getStudent = catchAsync( async function (req, res, next) {
-    let wit_id = res.locals.user.wit_id;
+    // let wit_id = res.locals.user.wit_id;
+    
+    let wit_id = req.params.wit_id;
+    console.log("get student " + wit_id);
 
     const student = await Student.findOne({ wit_id });
     if(!student){
@@ -53,8 +56,13 @@ exports.getStudent = catchAsync( async function (req, res, next) {
         );
     }
    
-    res.locals.student = student;
-    next();
+    // res.locals.student = student;
+    util.sendResponse(res, 200, {
+        status: 'success',
+        data: { student }
+    });
+    
+    // next();
 });
 
 

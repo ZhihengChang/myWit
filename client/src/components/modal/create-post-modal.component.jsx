@@ -28,14 +28,8 @@ class CreatePostModal extends React.Component{
             );
             let response = result.data;
             console.log(response);
+            window.location.reload();
             
-            showAlert('success', 'New moment posted!');
-            setTimeout(()=>{
-                this.props.close();
-                window.location.reload();
-            }, 500);
-            
-
         } catch(err) {
             console.log(err);
             console.log(err.response.data);
