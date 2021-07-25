@@ -48,19 +48,19 @@ const OPTIONS = {
     {
       id: 2,
       label: "Schedule",
-      icon: "moment",
+      icon: "schedule",
       linkUrl: "schedule",
     },
     {
       id: 4,
       label: "Network",
-      icon: "friends",
+      icon: "network",
       linkUrl: "",
     },
     {
       id: 5,
       label: "Setting",
-      icon: "apps",
+      icon: "settings",
       linkUrl: "",
     },
   ],
@@ -99,7 +99,7 @@ const OPTIONS = {
     {
       id: 3,
       label: "Add",
-      icon: "profile",
+      icon: "add",
       linkUrl: "",
     },
   ],
@@ -114,13 +114,13 @@ const OPTIONS = {
     {
       id: 3,
       label: "Add",
-      icon: "profile",
+      icon: "add",
       linkUrl: "",
     },
     {
       id: 3,
       label: "Remove",
-      icon: "profile",
+      icon: "remove",
       linkUrl: "",
     },
   ],

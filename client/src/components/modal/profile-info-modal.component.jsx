@@ -40,7 +40,7 @@ const ProfileInfoModal = ({student, close}) => (
                     </tr>
                     <tr>
                         <td className='rowname'>Birthday</td>
-                        <td>{student.date_of_birth}</td>
+                        <td>{new Date(student.date_of_birth).toDateString()}</td>
                     </tr>
                 </table>
             </div>
