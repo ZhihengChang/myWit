@@ -11,6 +11,8 @@ overflow: auto;
 
 .modal-footer, .modal-header{
 border: none;
+border-top-left-radius: 1.2em;
+border-top-right-radius: 1.2em;
 }
 
 .modal-footer{
@@ -28,6 +30,7 @@ font-size: 30px;
 .modal-title{
 color: rgb(122, 122, 122);
 font-size: 20px;
+font-weight: bolder;
 }
 
 .modal-footer button{

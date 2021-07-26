@@ -6,6 +6,7 @@ import SideBar from "../../components/side-bar/side-bar.component";
 import SearchBar from "../../components/search-bar/search-bar.component";
 import PostCardList from "../../components/post-card-list/post-card-list.component";
 import CreatePostModal from "../../components/modal/create-post-modal.component";
+import PostDetailModal from "../../components/modal/post-detail-modal.component";
 
 import './moment-page.styles.css';
 class MomentPage extends React.Component{
@@ -13,8 +14,10 @@ class MomentPage extends React.Component{
         super();
         this.state = {
             searchField: '',
+            post: null,
             posts: [],
             createPost: false,
+            showPostDetail: false,
         }
     }
 
@@ -42,14 +45,24 @@ class MomentPage extends React.Component{
         }
     }
 
+    selectPost = (post) => {
+        this.setState({ post: post}, this.openAndClosePostDetail);
+    }
+
     openAndCloseModal = () => {
         this.setState({ createPost: !this.state.createPost })
+    }
+
+    openAndClosePostDetail = () => {
+        this.setState({ showPostDetail: !this.state.showPostDetail })
     }
 
     render() {
         const searchField = this.state.searchField;
         const createPost = this.state.createPost;
+        const showPostDetail = this.state.showPostDetail;
         const posts = this.state.posts;
+        const post = this.state.post;
         const user = this.props.currentUser;
 
         const filteredPosts = posts.filter(post => 
@@ -72,7 +85,12 @@ class MomentPage extends React.Component{
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}
                 />
-                <PostCardList data={filteredPosts} userid={(user)? user._id : ''}/>
+                <PostCardList 
+                    data={filteredPosts} 
+                    userid={(user)? user._id : ''}
+                    styles={null}
+                    select={this.selectPost}
+                />
                 {
                     createPost && 
                         <CreatePostModal 
@@ -80,6 +98,13 @@ class MomentPage extends React.Component{
                             close={this.openAndCloseModal} 
                             fetch={this.fetchPosts}
                         />
+                }
+                {
+                    showPostDetail &&
+                        <PostDetailModal 
+                            post={post} 
+                            userid={(user)? user._id : ''}
+                            close={this.openAndClosePostDetail}/>
                 }
                 
             </div>
