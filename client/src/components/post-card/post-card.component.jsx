@@ -52,6 +52,10 @@ class PostCard extends React.Component {
         }   
     }
 
+    commentPost = () => {
+        this.props.select(this.props.post);
+    }
+
     render(){
         const liked = this.state.liked;
         const post = this.props.post;
@@ -82,7 +86,7 @@ class PostCard extends React.Component {
                         <Icon name={"like"} className={"action"} width={5} fill={(liked)? "#f55045" : "gray"}/>
                         <span>{this.state.numberOfLikes}</span>
                     </div>
-                    <div className='post-action comment'>
+                    <div className='post-action comment' onClick={this.commentPost}>
                         <Icon name={"comment"} className={"action"} width={5} fill={"gray"}/>
                         <span>{this.state.numberOfComments}</span>
                     </div>
