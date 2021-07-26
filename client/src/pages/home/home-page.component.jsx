@@ -3,6 +3,7 @@ import axios from "axios";
 import SideBar from "../../components/side-bar/side-bar.component";
 import SearchBar from "../../components/search-bar/search-bar.component";
 import PostCardList from "../../components/post-card-list/post-card-list.component";
+import PostDetailModal from "../../components/modal/post-detail-modal.component";
 
 import './home-page.styles.css';
 class HomePage extends React.Component{
@@ -10,7 +11,9 @@ class HomePage extends React.Component{
         super();
         this.state = {
             searchField: '',
-            schoolPosts: []
+            post: null,
+            schoolPosts: [],
+            showPostDetail: false,
         }
     }
 
@@ -29,10 +32,20 @@ class HomePage extends React.Component{
         }
     }
 
+    selectPost = (post) => {
+        this.setState({ post: post}, this.openAndClosePostDetail);
+    }
+
+    openAndClosePostDetail = () => {
+        this.setState({ showPostDetail: !this.state.showPostDetail })
+    }
+
     render() {
         const searchField = this.state.searchField;
         const schoolPosts = this.state.schoolPosts;
+        const showPostDetail = this.state.showPostDetail;
         const user = this.props.currentUser;
+        const post = this.state.post;
 
         const filteredPosts = schoolPosts.filter(post => 
             post.type.toLowerCase().includes(searchField.toLowerCase()) ||
@@ -47,7 +60,20 @@ class HomePage extends React.Component{
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}
                 />
-                <PostCardList data={filteredPosts} userid={(user)? user._id : ''}/>
+                <PostCardList 
+                    data={filteredPosts} 
+                    userid={(user)? user._id : ''}
+                    styles={null}
+                    select={this.selectPost}
+                />
+                {
+                    showPostDetail &&
+                        <PostDetailModal 
+                            post={post} 
+                            userid={(user)? user._id : ''}
+                            close={this.openAndClosePostDetail}
+                        />
+                }
             </div>
         )
     }

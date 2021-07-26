@@ -3,6 +3,7 @@ import axios from 'axios';
 import STYLES from '../post-card/card-styles.data';
 import Icon from '../../assets/icon.index'
 import showAlert from '../../util/alert';
+import PostComments from '../post-comment/post-comment.component';
 
 import './modal.styles.css';
 import './post-detail-modal.styles.css';
@@ -11,18 +12,15 @@ class PostDetailModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            post_id: null,
             liked: false,
             numberOfLikes: 0,
             numberOfComments: 0,
-            comments:[]
         }
     }
 
     componentDidMount(){
         const post = this.props.post;
         this.setState({
-            post_id: post._id,
             liked: (post.likes.includes(this.props.userid)),
             numberOfLikes: post.likes.length,
             numberOfComments: post.comments.length,
@@ -33,54 +31,84 @@ class PostDetailModal extends React.Component {
         return (type)? STYLES[type]: {}
     }
 
+    getColor = (type) => {
+        return (type=='post')? '#2b2b2b':'#ffffffdf';
+    }
+
+    getfill = (type, icon) => {
+        let fill = this.getColor(type);
+        if(icon == 'like'){
+            return (this.state.liked)? "#f55045" : fill;
+        }
+        return fill;
+    }
+
     render(){
-        const liked = this.state.liked;
         const post = this.props.post;
         const type = post.type;
 
         return (
             <div className='webmodal'>
                 <div className='modal-post-detail'
-                    style={this.getStyle(type).general}
+                    style={this.getStyle(type).header}
                 >
-                    <div className='modal-header' 
-                        style={this.getStyle(type).header}
-                    >
+                    <div className='modal-header' >
+                        
                         <span className={(type=='post')? "modal-title-post" : "modal-title"}>
-                            <Icon name='information' width={10} fill={(type=='post')? 'gray' : 'white'} className={"icon"}/>
-                            {post.author}
+                            <Icon width={10}
+                                name='information'  
+                                className={"icon"}
+                                fill={this.getColor(type)}
+                            />{post.author}
                         </span>
+
                         <span className='modal-close' onClick={this.props.close}>
-                            <Icon name='close' width={10} fill={(type=='post')? 'gray' : 'white'} className={"close"}/>
+                            <Icon width={10}
+                                name='close'
+                                fill={this.getColor(type)}
+                                className={"close"}
+                            />
                         </span>
+
                     </div>
                     
                     <div className='post-detail' 
-                        style={this.getStyle(type).body}
-                    >
-                        {post.content}
+                        style={{color: this.getColor(type)}}
+                    >{post.content}
                     </div>
                     
                     <div className='post-card-footer'
                         style={this.getStyle(type).footer}
                     >
                         <div className='post-action time'
-                        style={this.getStyle(type).body}
-                        >
-                            {post.post_ts}
+                            style={{color: this.getColor(type)}}
+                        >{post.post_ts}
                         </div>
+                       
                         <div className='post-action like' onClick={this.likePost}>
-                            <Icon name={"like"} className={"action"} width={5} fill={(liked)? "#f55045" : "gray"}/>
-                            <span>{this.state.numberOfLikes}</span>
+                            <Icon width={5}
+                                name={"like"} 
+                                className={"action"}  
+                                fill={this.getfill(type, 'like')}
+                            />
+                            <span style={{color: this.getColor(type)}}>
+                                {this.state.numberOfLikes}
+                            </span>
                         </div>
-                        <div className='post-action comment' onClick={this.commentPost}>
-                            <Icon name={"comment"} className={"action"} width={5} fill={"gray"}/>
-                            <span>{this.state.numberOfComments}</span>
-                        </div>
-                    </div>
-                    <div className='post-comments'>
                         
+                        <div className='post-action comment' onClick={this.commentPost}>
+                            <Icon width={5}
+                                name={"comment"} 
+                                className={"action"} 
+                                fill={this.getfill(type, 'comment')}
+                            />
+                            <span style={{color: this.getColor(type)}}>
+                                {this.state.numberOfComments}
+                            </span>
+                        </div>
                     </div>
+
+                    <PostComments post_id={post._id}/>
                 </div>
             </div>
         )
