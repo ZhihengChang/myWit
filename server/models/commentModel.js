@@ -5,6 +5,11 @@ const commentSchema = new mongoose.Schema({
         required: [true, 'A comment must have a user id'],
     },
 
+    username: {
+        type: String,
+        required: [true, 'A comment must have a username'],
+    },
+
     post_id: {
         type: String,
         required: [true, 'A comment must have a post id'],
@@ -17,8 +22,8 @@ const commentSchema = new mongoose.Schema({
     },
 
     comment_ts: { 
-        type: Date, 
-        default: Date.now() 
+        type: Number, 
+        default: new Date().getTime()
     },
 
 });

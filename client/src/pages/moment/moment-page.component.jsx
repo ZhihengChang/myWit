@@ -104,7 +104,8 @@ class MomentPage extends React.Component{
                         <PostDetailModal 
                             post={post} 
                             userid={(user)? user._id : ''}
-                            close={this.openAndClosePostDetail}/>
+                            close={this.openAndClosePostDetail}
+                        />
                 }
                 
             </div>

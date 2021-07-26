@@ -15,6 +15,7 @@ const DBAPI = require("../../util/DBAPI");
 const Student = require('../models/studentModel');
 const User = require('../models/userModel');
 const Post = require('../models/postModel');
+const Comment = require('../models/commentModel');
 const catchAsync = require('../../util/catchAsync');
 const AppError = require('../../util/appError');
 
@@ -43,6 +44,30 @@ exports.getAllPosts = catchAsync(async function (req, res, next) {
         status: 'success',
         result: result.length,
         data: { posts }
+    });
+});
+
+exports.getPost = catchAsync(async function (req, res, next) {
+    console.log("get post " + req.params.post_id);
+    const post_id = req.params.post_id;
+    const post = await Post.findById(post_id);
+
+    util.sendResponse(res, 200, {
+        status: 'success',
+        data: { post }
+    });
+});
+
+exports.getAllPostComments = catchAsync(async function (req, res, next) {
+    console.log("get all comments of post " + req.params.post_id);
+    
+    const post_id = req.params.post_id;
+    const comments = await Comment.find({post_id});
+
+    util.sendResponse(res, 200, {
+        status: 'success',
+        result: comments.length,
+        data: { comments }
     });
 });
 

@@ -7,6 +7,12 @@ const router = express.Router();
 router.route('/')
     .get(postController.getAllPosts);
 
+router.route('/:post_id')
+    .get(postController.getPost);
+
+router.route('/comments/:post_id')
+    .get(postController.getAllPostComments);
+
 router.route('/like')
     .post(authController.protect, postController.likePost);
 
