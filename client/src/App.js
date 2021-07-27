@@ -8,7 +8,6 @@ import SignUpPage from "./pages/signup/sign-up-page.component";
 import MomentPage from "./pages/moment/moment-page.component";
 import FriendPage from "./pages/friends/friends-page.component";
 import ProfilePage from "./pages/profile/profile-page.component";
-import SchedulePage from "./pages/profile/userSchedule";
 import AppPage from "./pages/apps/apps";
 import React from "react";
 
@@ -64,13 +63,6 @@ class App extends React.Component {
                 authToken={this.state.authToken} 
                 currentUser={this.state.currentUser}
               />
-            )}
-          />
-
-          <Route
-            path="/schedule"
-            render={(props) => (
-              <SchedulePage {...props} authToken={this.state.authToken} />
             )}
           />
 
