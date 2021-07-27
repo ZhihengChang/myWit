@@ -3,9 +3,12 @@ import SignUp from '../../components/sign-up/sign-up.component';
 
 import './sign-up-page.styles.css';
 
-const SignUpPage = () => (
+const SignUpPage = (props) => (
     <div className='base'>
-        <SignUp />
+        <SignUp 
+            history={props.history}
+            handleAuthentication = {props.handleAuthentication}
+        />
     </div>
 );
 
