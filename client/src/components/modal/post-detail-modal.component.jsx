@@ -28,12 +28,12 @@ class PostDetailModal extends React.Component {
     }
 
     getColor = (type) => {
-        return (type=='post')? '#2b2b2b':'#ffffffdf';
+        return (type==='post')? '#2b2b2b':'#ffffffdf';
     }
 
     getfill = (type, icon) => {
         let fill = this.getColor(type);
-        if(icon == 'like'){
+        if(icon === 'like'){
             return (this.state.liked)? "#f55045" : fill;
         }
         return fill;
@@ -69,7 +69,7 @@ class PostDetailModal extends React.Component {
                             style={this.getStyle(type).header}
                         >
                             <div className='modal-header' >
-                                <span className={(type=='post')? "modal-title-post" : "modal-title"}>
+                                <span className={(type==='post')? "modal-title-post" : "modal-title"}>
                                     <Icon width={10}
                                         name='information'  
                                         className={"icon"}
@@ -128,6 +128,7 @@ class PostDetailModal extends React.Component {
 
                             <PostComments post_id={post._id}/>
                             
+
                         </div>
                     )
                 }
