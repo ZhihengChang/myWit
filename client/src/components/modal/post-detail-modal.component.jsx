@@ -13,6 +13,8 @@ class PostDetailModal extends React.Component {
         super(props);
         this.state = {
             post: null,
+            message: '',
+            comments:[],
             liked: false,
             numberOfLikes: 0,
             numberOfComments: 0,
@@ -20,7 +22,7 @@ class PostDetailModal extends React.Component {
     }
 
     componentDidMount(){
-        this.fetchPost();
+        this.fetchPostDetail();
     }
 
     getStyle = (type) => {
@@ -39,24 +41,71 @@ class PostDetailModal extends React.Component {
         return fill;
     }
 
-    fetchPost = async () => {
+    fetchPostDetail = async () => {
         try{
-            const result = await axios.get(`/api/posts/${this.props.post._id}`);
+            const result = await axios.get(`/api/posts/${this.props.post_id}`);
             const post = result.data.data.post;
+            const user = this.props.user;
+            const user_id = (user)? user._id : '';
             this.setState({ 
                 post: post,
-                liked: (post.likes.includes(this.props.userid)),
+                liked: (post.likes.includes(user_id)),
                 numberOfLikes: post.likes.length,
                 numberOfComments: post.comments.length,
-            });
+            }, this.fetchComments);
         }catch(err){
             console.log(err);
         }
     }
 
+    fetchComments = async () => {
+        try{
+            const post_id = this.props.post_id;
+            const result = await axios.get(`/api/posts/comments/${post_id}`);
+            const response = result.data;
+            this.setState({ comments: response.data.comments });
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+    handleSubmit = async event => {
+        event.preventDefault();
+        try {
+            const user = this.props.user;
+            const comments = this.state.comments;
+            if(user){
+                const user_id = user._id;
+                const username = user.username;
+                const post_id = this.props.post_id;
+                const message = this.state.message;
+
+                let result = await axios.post('/api/posts/comment', 
+                    { user_id, username, post_id, message, post_ts: new Date()}
+                );
+                let response = result.data;
+                console.log(response);
+                comments.push(response.comment);
+                this.setState({ 
+                    numberOfComments: this.state.numberOfComments + 1,
+                    comments: comments
+                });
+            }else{
+                showAlert('error', 'Please sign in');
+            } 
+        } catch(err) {
+            console.log(err);
+            console.log(err.response.data);
+            showAlert('error', err.response.data.message);
+        }
+        
+        this.setState({ message: '' });
+    }
+
     render(){
         
         const post = this.state.post;
+        const comments = this.state.comments;
         const type = (post)? post.type : '';
 
         return (
@@ -71,7 +120,7 @@ class PostDetailModal extends React.Component {
                             <div className='modal-header' >
                                 <span className={(type==='post')? "modal-title-post" : "modal-title"}>
                                     <Icon width={10}
-                                        name='information'  
+                                        name='detail'  
                                         className={"icon"}
                                         fill={this.getColor(type)}
                                     />
@@ -126,9 +175,23 @@ class PostDetailModal extends React.Component {
                                 </div>
                             </div>
 
-                            <PostComments post_id={post._id}/>
+                            <PostComments comments={comments}/>
                             
-
+                            <form className='comment-form' onSubmit={this.handleSubmit}>
+                                <input 
+                                    type='text'
+                                    placeholder='To my way of thinking ...' 
+                                    value = {this.state.message}
+                                    onChange={(e) => {this.setState({message: e.target.value})}} 
+                                />
+                                <button type='submit'>
+                                    <Icon width={10}
+                                        name='speak'  
+                                        className={"speak"}
+                                        fill={this.getColor(type)}
+                                    />
+                                </button>
+                            </form>
                         </div>
                     )
                 }

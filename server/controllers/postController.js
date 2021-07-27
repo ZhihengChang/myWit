@@ -162,7 +162,7 @@ exports.commentPost = catchAsync(async function (req, res, next) {
     
     util.sendResponse(res, 200, {
         status: 'success',
-        message: 'commented'
+        comment: newComment,
     });
 });
 
