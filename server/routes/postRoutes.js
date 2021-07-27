@@ -16,6 +16,9 @@ router.route('/comments/:post_id')
 router.route('/like')
     .post(authController.protect, postController.likePost);
 
+router.route('/comment')
+    .post(authController.protect, postController.commentPost);
+
 router.route('/create')
     .post(authController.protect, postController.createPost);
 

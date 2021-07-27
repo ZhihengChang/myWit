@@ -21,7 +21,8 @@ class PostComments extends React.Component{
             const post_id = this.props.post_id;
             const result = await axios.get(`/api/posts/comments/${post_id}`);
             const response = result.data;
-            this.setState({ posts: response.data.comments });
+            console.log(response.data.comments );
+            this.setState({ comments: response.data.comments });
         }catch(err){
             console.log(err);
         }
@@ -32,7 +33,7 @@ class PostComments extends React.Component{
 
         return (
             <div className='post-comments'>
-                <ul>
+                <ul className='post-comments-list'>
                     {
                         comments.length === 0 ?
                         <li>
@@ -43,9 +44,9 @@ class PostComments extends React.Component{
                             return (
                                 <li>
                                     <div className='comment'>
-                                        <span className='comment-username'>{comment.username}</span>
+                                        <span className='comment-username'>{`${comment.username}: `}</span>
                                         <span className='comment-message'>{comment.message}</span>
-                                        <span className='comment-comment_ts'>{comment.comment_ts}</span>
+                                        <span className='comment-comment_ts'>{new Date(comment.comment_ts).toDateString()}</span>
                                     </div>
                                 </li>
                             )

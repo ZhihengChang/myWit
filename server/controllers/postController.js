@@ -143,3 +143,26 @@ exports.likePost = catchAsync(async function (req, res, next) {
     });
 });
 
+exports.commentPost = catchAsync(async function (req, res, next) {
+    
+    const post = await Post.findById(req.body.post_id);
+    console.log(req.body);
+    if(!post){
+        return next(
+            new AppError(
+                'Post has been deleted',
+                404
+            )
+        );
+    }
+
+    const newComment = await Comment.create(req.body);
+    post.comments.push(newComment._id);
+    await post.save();
+    
+    util.sendResponse(res, 200, {
+        status: 'success',
+        message: 'commented'
+    });
+});
+
