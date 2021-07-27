@@ -18,10 +18,12 @@ import Close from './icon/close.icon';
 import Write from './icon/write.icon';
 import Pen from './icon/pen.icon';
 import Post from './icon/post.icon';
+import Detail from './icon/detail.icon';
 import Signin from './icon/signin.icon';
 import Signout from './icon/signout.icon';
 import Like from './icon/like.icon';
 import Comment from './icon/comment.icon';
+import Speak from './icon/speak.icon';
 import Id from './icon/id.icon';
 import Username from './icon/username.icon';
 import Email from './icon/email.icon';
@@ -67,6 +69,8 @@ const Icon = props => {
       return <Pen {...props} />;
     case "post":
       return <Post {...props} />;
+    case "detail":
+      return <Detail {...props} />;
     case "signin":
       return <Signin {...props} />;
     case "signout":
@@ -75,6 +79,8 @@ const Icon = props => {
       return <Like {...props} />;
     case "comment":
       return <Comment {...props} />;
+    case "speak":
+      return <Speak {...props} />;
     case "id":
       return <Id {...props} />;
     case "username":

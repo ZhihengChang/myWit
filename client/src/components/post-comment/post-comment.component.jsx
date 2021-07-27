@@ -8,28 +8,11 @@ class PostComments extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            comments: []
-        }
-    }
-
-    componentDidMount(){
-        this.fetchComments();
-    }
-
-    fetchComments = async () => {
-        try{
-            const post_id = this.props.post_id;
-            const result = await axios.get(`/api/posts/comments/${post_id}`);
-            const response = result.data;
-            console.log(response.data.comments );
-            this.setState({ comments: response.data.comments });
-        }catch(err){
-            console.log(err);
         }
     }
 
     render(){
-        const comments = this.state.comments;
+        const comments = this.props.comments;
 
         return (
             <div className='post-comments'>
@@ -37,7 +20,7 @@ class PostComments extends React.Component{
                     {
                         comments.length === 0 ?
                         <li>
-                            No Comment yet
+                            No Comment yet.
                         </li>
                         :
                         comments.map((comment)=>{

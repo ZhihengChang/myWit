@@ -4,10 +4,6 @@
     max-height: 600px;
 }
 
-.post-comments-list{
-    padding-bottom: 10px;
-}
-
 .post-comments li {
     width: 96%;
     margin: auto;
@@ -23,4 +19,5 @@
 }
 .comment-comment_ts{
     float: right;
+    font-size: 14px;
 }
