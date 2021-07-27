@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import Icon from '../../assets/icon.index';
 
 import './name-card.styles.css';
 
@@ -8,7 +6,7 @@ const NameCard = ({student, avatar}) => (
     <div className = 'name-card'>
 
         <div className = 'name-card-left'>
-            <img className = 'avatar' src = {avatar} />
+            <img className = 'avatar' src = {avatar}/>
         </div>
 
         <div className = 'name-card-center'>
