@@ -460,4 +460,14 @@ to {
 margin-top: 1%;
 }
 }
+
+@keyframes slidein-right {
+  from {
+    margin-left: 2000%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
   

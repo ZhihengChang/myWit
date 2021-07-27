@@ -29,6 +29,12 @@ import Username from './icon/username.icon';
 import Email from './icon/email.icon';
 import Password from './icon/password.icon';
 import Confirm from './icon/confirm.icon';
+import Brightspace from './icon/brightspace.icon';
+import Web from './icon/web.icon';
+import Library from './icon/library.icon';
+import Coverify from './icon/coverify.icon';
+import Registration from './icon/registration.icon';
+import Outlook from './icon/outlook.icon';
 
 
 const Icon = props => {
@@ -91,6 +97,18 @@ const Icon = props => {
       return <Password {...props} />;
     case "confirm":
       return <Confirm {...props} />;
+    case "brightspace":
+      return <Brightspace {...props} />;
+    case "web":
+      return <Web {...props} />;
+    case "library":
+      return <Library {...props} />;
+    case "coverify":
+      return <Coverify {...props} />;
+    case "registration":
+      return <Registration {...props} />;
+    case "outlook":
+      return <Outlook {...props} />;
     default:
       return <div></div>;
   }
