@@ -35,6 +35,7 @@ import Library from './icon/library.icon';
 import Coverify from './icon/coverify.icon';
 import Registration from './icon/registration.icon';
 import Outlook from './icon/outlook.icon';
+import Avatar from './icon/avatar.icon';
 
 
 const Icon = props => {
@@ -109,6 +110,8 @@ const Icon = props => {
       return <Registration {...props} />;
     case "outlook":
       return <Outlook {...props} />;
+    case "avatar":
+      return <Avatar {...props} />;
     default:
       return <div></div>;
   }

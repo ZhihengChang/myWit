@@ -65,8 +65,8 @@ const userSchema = new mongoose.Schema({
     posts:              { type: Array, default: [String] },
     likes:              { type: Array, default: [String] }, // post_id
     chats:              { type: Array, default: [String] },
-    login_ts:           { type: Date, default: new Date(0) },
-    logout_ts:          { type: Date, default: new Date(0) },
+    login_ts:           { type: Number, default: new Date(0).getTime() },
+    logout_ts:          { type: Number, default: new Date(0).getTime() },
     signup_ts:          { type: Date, default: Date.now() },
 });
 

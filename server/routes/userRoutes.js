@@ -33,4 +33,7 @@ router.route('/:id')
 router.route('/student/:wit_id')
     .get(userController.getStudent);
 
+router.route('/friends/:id')
+    .get(userController.getFriends);
+
 module.exports = router;

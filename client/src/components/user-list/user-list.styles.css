@@ -1,12 +1,6 @@
 .user-list {
-  position: fixed;
+  position: absolute;
   top: 80px;
-  width: 100%;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
-  padding-top: 1em;
-  padding-right: 15em;
-  padding-left: 15em;
+  width: 100%;
 }

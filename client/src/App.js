@@ -50,6 +50,7 @@ class App extends React.Component {
               <FriendPage
                 {...props}
                 authToken={this.state.authToken}
+                currentUser={this.state.currentUser}
                 handleAuthentication={this.handleAuthentication}
               />
             )}
