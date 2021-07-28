@@ -64,6 +64,7 @@ class MomentPage extends React.Component{
         const posts = this.state.posts;
         const post = this.state.post;
         const user = this.props.currentUser;
+        const user_id = (user)? user._id : '';
 
         const filteredPosts = posts.filter(post => 
             post.type.toLowerCase().includes(searchField.toLowerCase()) ||
@@ -81,6 +82,7 @@ class MomentPage extends React.Component{
                     }
                 />
                 <SearchBar 
+                    user_id = {user_id}
                     handleChange = {this.handleChange} 
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}

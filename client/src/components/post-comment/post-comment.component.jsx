@@ -1,9 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-import Icon from '../../assets/icon.index';
-
 import './post-comment.styles.css';
-
 class PostComments extends React.Component{
     constructor(props){
         super(props);
@@ -23,9 +19,9 @@ class PostComments extends React.Component{
                             No Comment yet.
                         </li>
                         :
-                        comments.map((comment)=>{
+                        comments.map((comment, index)=>{
                             return (
-                                <li>
+                                <li key={index}>
                                     <div className='comment'>
                                         <span className='comment-username'>{`${comment.username}: `}</span>
                                         <span className='comment-message'>{comment.message}</span>

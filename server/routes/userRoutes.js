@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
-router.get('/logout', authController.logout);
+router.get('/logout/:id', authController.logout);
 
 router.patch('/updatePassword',
     authController.protect,
@@ -32,5 +32,8 @@ router.route('/:id')
 
 router.route('/student/:wit_id')
     .get(userController.getStudent);
+
+router.route('/friends/:id')
+    .get(userController.getFriends);
 
 module.exports = router;

@@ -84,7 +84,7 @@ class PostDetailModal extends React.Component {
                     { user_id, username, post_id, message, post_ts: new Date()}
                 );
                 let response = result.data;
-                console.log(response);
+                
                 comments.push(response.comment);
                 this.setState({ 
                     numberOfComments: this.state.numberOfComments + 1,

@@ -65,6 +65,33 @@ exports.getStudent = catchAsync( async function (req, res, next) {
     // next();
 });
 
+exports.getFriends= catchAsync( async function (req, res, next) {
+    const user_id = req.params.id;
+    const user = await User.findById(user_id);
+    if(!user){
+        return next(new AppError(`No user found, please sign in`, 404));
+    }
+    const friends = user.friends;
+    const data = [];
+
+    for(const id of friends){
+        const friend = await User.findById(id);
+        if(friend) {
+            const obj = {
+                username:   friend.username,
+                status:     friend.status,
+                lastActive: friend.logout_ts,
+            }
+            console.log(obj)
+            data.push(obj);
+        }
+    }
+
+    util.sendResponse(res, 200, {
+        status: 'success', data
+    });
+});
+
 
 /**
  * Get all users in user collections

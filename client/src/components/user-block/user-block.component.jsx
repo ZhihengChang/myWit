@@ -1,25 +1,16 @@
 import React, { Component } from "react";
+import Icon from '../../assets/icon.index';
+import './user-block.styles.css';
 
-const UserItem = (props) => {
-  const { login, avatar_url, html_url } = props.user;
-  return (
-    <div className="card text-center">
-      <img
-        src={avatar_url}
-        alt=""
-        className="round-img"
-        style={{ width: "60px" }}
-      />
+const UserBlock = ({username, status, lastActive}) => (
+  <div className='user-block'>
+    <Icon name={"avatar"} width={10} className={"friend-avatar"}/>
+    <div className='user-block-status'
+      style={{backgroundColor: (status==='online')? 'green':'#f53333'}}
+    ></div>
+    <span className='user-block-username'>{username}</span>
+    <span className='user-block-lastActive'>{new Date(lastActive).toDateString()}</span>
+  </div>
+)
 
-      <h3>{login}</h3>
-
-      <div>
-        <a href={html_url} className="btn btn-dark">
-          More
-        </a>
-      </div>
-    </div>
-  );
-};
-
-export default UserItem;
+export default UserBlock;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import SideBar from "../../components/side-bar/side-bar.component";
+import AppList from "../../components/app-list/app-list.component";
 
 export class apps extends Component {
   constructor() {
@@ -13,6 +14,7 @@ export class apps extends Component {
     return (
       <div>
         <SideBar page='apps' authToken={this.props.authToken} />
+        <AppList />
       </div>
     );
   }

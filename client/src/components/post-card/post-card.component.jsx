@@ -33,7 +33,7 @@ class PostCard extends React.Component {
 
     likePost = async () => {
         try{
-            const result = await axios.post('/api/posts/like', {
+            await axios.post('/api/posts/like', {
                 user_id: this.props.userid, 
                 post_id: this.state.post_id
             });
