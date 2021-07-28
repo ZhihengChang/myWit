@@ -5,6 +5,8 @@
     margin: auto;
     margin-bottom: 5px;
     border-radius: 16px;
+    animation-name: slidein-s;
+    animation-duration: 1.6s;
     
 }
 

@@ -45,6 +45,7 @@ class HomePage extends React.Component{
         const schoolPosts = this.state.schoolPosts;
         const showPostDetail = this.state.showPostDetail;
         const user = this.props.currentUser;
+        const user_id = (user)? user._id : '';
         const post = this.state.post;
 
         const filteredPosts = schoolPosts.filter(post => 
@@ -56,6 +57,7 @@ class HomePage extends React.Component{
             <div className = 'homepage'> 
                 <SideBar page='home' authToken={this.props.authToken}/>
                 <SearchBar 
+                    user_id = {user_id}
                     handleChange = {this.handleChange} 
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}

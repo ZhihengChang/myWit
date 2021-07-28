@@ -33,11 +33,14 @@ class FriendsPage extends React.Component{
     }
 
     render() {
+        const user = this.props.currentUser;
+        const user_id = (user)? user._id : '';
         const friends = this.state.friends;
         console.log("friends: ", friends);
         return (
             <div>
                 <SearchBar 
+                    user_id = {user_id}
                     handleChange = {this.handleChange} 
                     authToken={this.props.authToken} 
                     handleAuthentication = {this.props.handleAuthentication}

@@ -119,6 +119,12 @@ exports.login = catchAsync(async function (req, res, next) {
     }
 
     // send token
+    user.status = 'online';
+    user.login_ts = new Date().getTime();
+    await user.save({
+        validateBeforeSave: false
+    });
+
     createTokenAndSend(res, 200, user);
 });
 
@@ -126,10 +132,20 @@ exports.login = catchAsync(async function (req, res, next) {
  * User logout
  */
 exports.logout = catchAsync(async function(req, res, next){
+    const user_id = req.params.id;
+    
     res.cookie('jwt', 'loggedout', {
         expires: new Date(Date.now() + 10 * 1000),
         httpOnly: true,
     });
+
+    const user = await User.findById(user_id);
+    user.status = 'offline';
+    user.logout_ts = new Date().getTime();
+    await user.save({
+        validateBeforeSave: false
+    });
+
     util.sendResponse(res, 200, { status: 'success' });
 });
 

@@ -461,6 +461,16 @@ margin-top: 1%;
 }
 }
 
+@keyframes slidein-s {
+  from {
+  margin-top: 100%;
+  }
+  
+  to {
+  margin-top: 0%;
+  }
+  }
+
 @keyframes slidein-right {
   from {
     margin-left: 2000%;

@@ -22,7 +22,7 @@ const SearchBar = (props) => (
           to="/"
           onClick={async () => {
             try{
-              let result = await axios.get('/api/users/logout');
+              let result = await axios.get(`/api/users/logout/${props.user_id}`);
               if(result.data.status === 'success'){
                 showAlert('success', 'Logged out');
                 props.handleAuthentication("loggedout", null);
