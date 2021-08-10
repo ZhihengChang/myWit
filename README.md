@@ -21,7 +21,7 @@
     <img src="src/client/views/img/mywit_logo.png" alt="Logo" height=100>
   </a> -->
 
-  <h3 align="center">myWit</h3>
+  <h3 align="center">MyWIT</h3>
 
   <p align="center">
     A user-friendly, lightweight social networking web application for Wentworth students only.
@@ -70,7 +70,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![myWit Home Screen Shot](https://github.com/ZhihengChang/MyWentworth/blob/main/demo/homeui.PNG)
+![myWit Home Screen Shot](https://drive.google.com/uc?export=view&id=1mdxRwlLU6u5D0RMqPOWIrhcmHRftL_xN)
 
 As long as Wentworth students are staying off campus, there will always be an aspect of the college life missing. myWit is a userfriendly, light weight social networking web application for students only absolutely begin to bring some of that back. Social media has been very instrumental for people to communicate with each other while staying safe from their home. Through myWit, Wentworth students will meet new classmates and friends much easier and improve their social life. myWit also gives students an opportunity to share their thoughts with other students across the campus.
 
