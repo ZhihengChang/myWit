@@ -70,7 +70,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![myWit Home Screen Shot](https://drive.google.com/uc?export=view&id=1mdxRwlLU6u5D0RMqPOWIrhcmHRftL_xN)
+![myWit Home Screen Shot](https://drive.google.com/uc?export=view&id=1pl2HLXP6yHfZbUuPW2_p0CleHPJ6xaK5)
 
 As long as Wentworth students are staying off campus, there will always be an aspect of the college life missing. myWit is a userfriendly, light weight social networking web application for students only absolutely begin to bring some of that back. Social media has been very instrumental for people to communicate with each other while staying safe from their home. Through myWit, Wentworth students will meet new classmates and friends much easier and improve their social life. myWit also gives students an opportunity to share their thoughts with other students across the campus.
 
@@ -80,21 +80,23 @@ It weeds out current myWentworth functionalities and embed additional functional
 #### 1. Account
 myWit allows students to view their personal info, and academic info such as course schedule and networks.
 
-![myWit Profile Screen Shot](https://github.com/ZhihengChang/MyWentworth/blob/main/demo/profile.png)
+![myWit Profile Screen Shot](https://drive.google.com/uc?export=view&id=16bfOumuOOkDHqgjOvjckUx8S7V5gwp2O)
 
 #### 2. Moment
-myWit allows students to share their thoughts, ideas, and updates across the campus through creating "moments" (posts). Moment can not only used by students but also by School offices. School events/updates or department announcements can also be posted here with different color of highlight to enhance the visibility of students. Student can also  interact with moments. Interaction includes Like and Comment the moment.
+myWit allows students to share their thoughts, ideas, and updates across the campus through creating "moments" (posts). Student can also interact with moments. Interaction includes Like and Comment the moment.
 
-![myWit Moment Screen Shot](https://github.com/ZhihengChang/MyWentworth/blob/main/demo/newMoment.png)
+![myWit Moment Screen Shot](https://drive.google.com/uc?export=view&id=1Ovhs5Zf_KfWqsuF_38_cNe9cMYespi1B)
 
 #### 3. Friends (In development, to be relased later)
 myWit allows students to add friends through searching for WIT IDs, usernames, or the students' real names. Students can also send messages directly to their friends by starting a Chat. Additionally, students have the capability to view their friends’ student profile (exclude sensitive information) by just clicking their usernames.
+
+![myWit Moment Screen Shot](https://drive.google.com/uc?export=view&id=14jERT-C0hGOLNePOwwIzJc7wQ3yqWfq9)
 
 
 #### 4. Apps
 myWit allows students to access a dynamic collections which serves to help student in all kind of aspect further more. The collection contains necessary student resources or other third-party learning tools/applications/websites. In apps, these resources/applications are presented as a block. Students are able to add or remove different blocks depends on their academic needs or personal preferences.
 
-![myWit Apps Screen Shot](https://github.com/ZhihengChang/MyWentworth/blob/main/demo/apps.png)
+![myWit Apps Screen Shot](https://drive.google.com/uc?export=view&id=1I62cnYYW2LKTZ6a8jiBZorGnSbd4bYfw)
 
 ### Built With
 
@@ -132,6 +134,14 @@ Clone the repo
    ```sh
    https://github.com/ZhihengChang/MyWentworth.git
    ```
+Go to the project root and from there:
+Install required pakages
+   ```sh
+   npm install
+   cd client
+   npm install
+   cd ..
+   ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -140,7 +150,12 @@ Clone the repo
    ```sh
    npm start
    ```
-2. Go to [mywit](http://localhost:3000)
+2. Open another terminal at the project root and start the React server
+    ```sh
+   cd client
+   npm start
+   ```
+3. The browser will automatically open and at MyWIT Campus Home page. If not click here: [mywit](http://localhost:3000)
 
 
 
@@ -185,8 +200,7 @@ Project Link: [https://github.com/ZhihengChang/MyWentworth](https://github.com/Z
 
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
-* [Pug](https://pugjs.org/api/getting-started.html)
+* [React](https://reactjs.org/)
 * [MongoDB](https://www.mongodb.com/cloud/atlas2)
 * [Img Shields](https://shields.io)
 * [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
