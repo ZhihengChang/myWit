@@ -102,7 +102,7 @@ myWit allows students to access a dynamic collections which serves to help stude
 
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
-* [Pug](https://pugjs.org/api/getting-started.html)
+* [React](https://reactjs.org/)
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas2)
 
 
